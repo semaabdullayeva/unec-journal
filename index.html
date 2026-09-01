@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="az">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNEC Tələbə Tədqiqatları Jurnalı</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="topbar ">
+      <div class="container">
+        <div class="header-left">
+          <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyu">
+            <i class="bi bi-list"></i>
+          </button>
+          <button class="icon-btn search-btn" aria-label="Axtarış">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+
+        <div class="header-center">
+          <h1 class="title">UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="dropdown" id="langDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+              <span>AZ</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+              <div class="dropdown-item active">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <circle fill="#00B5E2" cx="18" cy="18" r="18" />
+                    <path fill="#E00034" d="M0 12h36v12H0z" />
+                    <path fill="#009A44" d="M0 24h36v12H0z" />
+                    <circle fill="#FFF" cx="17" cy="18" r="4" />
+                    <circle fill="#E00034" cx="18" cy="18" r="3.2" />
+                    <polygon fill="#FFF"
+                      points="21,18 21.7,18.5 21.3,17.7 22,17.2 21.1,17.2 20.8,16.4 20.5,17.2 19.6,17.2 20.3,17.7 19.9,18.5" />
+                  </svg>
+                  <span>Azerbaijan</span>
+                </div>
+                <i class="bi bi-check-lg"></i>
+              </div>
+              <div class="dropdown-item">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <clipPath id="uk-clip">
+                      <circle cx="18" cy="18" r="18" />
+                    </clipPath>
+                    <g clip-path="url(#uk-clip)">
+                      <path fill="#00247D" d="M0 0h36v36H0z" />
+                      <path stroke="#FFF" stroke-width="6" d="M0 0l36 36M36 0L0 36M18 0v36M0 18h36" />
+                      <path stroke="#CF142B" stroke-width="4" d="M18 0v36M0 18h36" />
+                      <path stroke="#CF142B" stroke-width="2" d="M0 0l36 36M36 0L0 36" />
+                    </g>
+                  </svg>
+                  <span>English</span>
+                </div>
+              </div>
+              <div class="dropdown-item">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <circle fill="#FFF" cx="18" cy="18" r="18" />
+                    <path fill="#D52B1E" d="M0 24h36v12H0z" />
+                    <path fill="#0039A6" d="M0 12h36v12H0z" />
+                  </svg>
+                  <span>Russian</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <a href="login.html" class="icon-btn" aria-label="Profil">
+            <i class="bi bi-person"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-row d-flex text-center align-items-center">
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Bağla">
+        <i class="bi bi-x"></i>
+      </button>
+      <div class="container">
+        <a class="nav-link-custom" href="#home">Ana səhifə</a>
+
+        <div class="dropdown" id="aboutDropdown">
+          <button class="nav-link-custom dropdown-btn about-btn" onclick="toggleAboutDropdown()" type="button">
+            <span>Haqqımızda</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+          <div class="dropdown-menu about-menu">
+            <div class="about-dropdown-item">
+              <a href="#journal">
+                Jurnal haqqında
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="#presentation">
+                Məqalə Təqdimatı
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="#editorial">
+                Redaksiya heyəti
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="#information">
+                Məlumat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav-link-custom" href="#archive">Arxiv</a>
+        <a class="nav-link-custom" href="#announcements">Elanlar</a>
+        <a class="nav-link-custom" href="#contact">Əlaqə</a>
+        <a class="nav-link-custom" href="#systems">Açıq Jurnal sistemləri <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-start g-4">
+          <div class="col-md-6">
+            <div class="hero-copy">
+              <h1 class="hero-title">There are many variations of passages of Lorem Ipsum available</h1>
+              <p class="hero-text">It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                more-or-less norma</p>
+              <div class="hero-actions">
+                <a href="#featured" class="btn-dark-custom">Məqaləni təqdim et</a>
+                <a href="#archive" class="btn-light-custom">Daxil ol</a>
+              </div>
+              <div class="stats d-flex">
+                <div class="stat-item flex-fill">
+                  <div class="stat-number">120+</div>
+                  <div class="stat-label">Təqdim edilmiş məqalə</div>
+                </div>
+                <div class="stat-item flex-fill">
+                  <div class="stat-number">16+</div>
+                  <div class="stat-label">Dərc edilmiş jurnal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6"><img class="hero-image" src="assets/images/hero/unec-building.jpg" alt="UNEC binası">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="featured">
+      <div class="container unec-journal-page">
+
+        <!-- =================================
+         TOP SECTION
+    ================================== -->
+
+        <section class="unec-journal-top">
+
+          <!-- HERO -->
+          <div class="unec-journal-hero">
+            <img src="assets/images/journals/main-journal.jpg" alt="UNEC Tələbə Tədqiqatları">
+          </div>
+
+
+          <!-- JOURNAL ISSUES -->
+          <div class="unec-journal-issues">
+
+            <!-- ISSUE 1 -->
+            <article class="unec-journal-issue">
+
+              <img class="unec-journal-issue__image" src="assets/images/journals/thumb1.jpg" alt="Jurnal buraxılışı">
+
+              <div>
+
+                <h2 class="unec-journal-issue__title">
+                  Cild. 3 Nömrə. 1 (2026)
+                </h2>
+
+                <p class="unec-journal-issue__text">
+                  UNEC Tələbə Tədqiqatları Jurnalının 2026-cı il,
+                  3-cü cild, 1-ci nömrəsi müxtəlif elm...
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- ISSUE 2 -->
+            <article class="unec-journal-issue">
+
+              <img class="unec-journal-issue__image" src="assets/images/journals/thumb2.jpg" alt="Jurnal buraxılışı">
+
+              <div>
+
+                <h2 class="unec-journal-issue__title">
+                  Cild. 3 Nömrə. 1 (2026)
+                </h2>
+
+                <p class="unec-journal-issue__text">
+                  UNEC Tələbə Tədqiqatları Jurnalının 2026-cı il,
+                  3-cü cild, 1-ci nömrəsi müxtəlif elm...
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- ISSUE 3 -->
+            <article class="unec-journal-issue">
+
+              <img class="unec-journal-issue__image" src="assets/images/journals/thumb3.jpg" alt="Jurnal buraxılışı">
+
+              <div>
+
+                <h2 class="unec-journal-issue__title">
+                  Cild. 3 Nömrə. 1 (2026)
+                </h2>
+
+                <p class="unec-journal-issue__text">
+                  UNEC Tələbə Tədqiqatları Jurnalının 2026-cı il,
+                  3-cü cild, 1-ci nömrəsi müxtəlif elm...
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- =================================
+         CONTENT
+    ================================== -->
+
+        <section class="unec-journal-content">
+
+
+          <!-- MAIN CONTENT -->
+          <div class="unec-journal-main">
+
+            <!-- DATE -->
+            <div class="unec-journal-date">
+
+              <i class="bi bi-calendar3"></i>
+
+              <span>
+                06.05.2025
+              </span>
+
+            </div>
+
+
+            <!-- TITLE -->
+            <h1>
+              Cild. 3 Nömrə. 1 (2026):
+              UNEC Tələbə Tədqiqatları Jurnalı
+            </h1>
+
+
+            <!-- DESCRIPTION -->
+            <p class="unec-journal-description">
+
+              UNEC Tələbə Tədqiqatları Jurnalının 2026-cı il,
+              3-cü cild, 1-ci nömrəsi müxtəlif elm sahələrini
+              əhatə edən aktual və multidissiplinar tədqiqatların
+              nəticələrini özündə ehtiva edir.
+
+              <br>
+
+              Buraxılışda iqtisadiyyat, maliyyə, biznes, coğrafiya,
+              informasiya texnologiyaları, süni intellekt, təhsil,
+              sosial elmlər və mühəndislik istiqamətləri üzrə
+              aparılmış elmi araşdırmalar müasir nəzəri yanaşmalar
+              və praktik təhlillər əsasında təqdim olunmuşdur.
+
+              Nəşrdə yer alan məqalələr elmi metodologiyaya uyğun
+              hazırlanaraq aktual problemlərin elmi əsaslarla
+              qiymətləndirilməsinə, innovativ həll istiqamətlərinin
+              müəyyənləşdirilməsinə və elmi biliklər bazasının
+              zənginləşdirilməsinə xidmət edir.
+
+              Jurnalın bu nömrəsi gənc tədqiqatçıların elmi
+              fəaliyyətinin inkişafını dəstəkləməklə yanaşı,
+              akademik mühitdə elmi müzakirələrin genişlənməsinə...
+
+            </p>
+
+
+            <!-- ACTIONS -->
+            <div class="unec-journal-actions">
+
+              <a href="#" class="unec-journal-pdf">
+                <i class="bi bi-file-earmark-pdf"></i>
+                PDF
+              </a>
+
+              <div class="doi-link">
+                <span>DOI:</span>
+                <a href="#" target="_blank">
+                  https://doi.org/10.30546/0a2ted920
+                </a>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================
+           SIDEBAR
+      ================================== -->
+
+          <aside class="unec-journal-sidebar">
+
+            <div class="unec-journal-section-title">
+              Məqalələr
+            </div>
+
+
+            <!-- ARTICLE 1 -->
+            <article class="unec-journal-article">
+
+              <a href="#" class="unec-journal-article__title">
+                MUHASİBAT VƏ DENETİMDE BİLİŞİM TEXNOLOGİLERİ
+                KULLANIMI: TÜRKİYE–AZERBAYCAN KARŞILAŞTIRMASI
+              </a>
+
+
+              <div class="unec-journal-article__author">
+                Asude Nuriyeva (Müəllif)
+              </div>
+
+
+              <a href="#" class="unec-journal-pdf">
+                <i class="bi bi-file-earmark-pdf"></i>
+                PDF
+              </a>
+
+            </article>
+
+
+            <!-- ARTICLE 2 -->
+            <article class="unec-journal-article">
+
+              <a href="#" class="unec-journal-article__title">
+                POST-MÜNAQİŞƏ ƏRAZİLƏRİNDƏ VERGİ
+                GÜZƏŞTLƏRİNİN İNVESTİSİYA CƏLBEDİCİLİYİNƏ
+                TƏSİRİ: QARABAĞ VƏ ŞƏRQİ ZƏNGƏZUR...
+              </a>
+
+
+              <div class="unec-journal-article__author">
+                Fəridə Baxşaliyeva (Müəllif)
+              </div>
+
+
+              <a href="#" class="unec-journal-pdf">
+                <i class="bi bi-file-earmark-pdf"></i>
+                PDF
+              </a>
+
+            </article>
+
+          </aside>
+
+        </section>
+
+      </div>
+    </section>
+
+    <section class="archive" id="archive">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Arxiv</h2>
+            <div class="section-subtitle">Standout projects making waves around the web</div>
+          </div><button class="view-more" data-view-archive>View more</button>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-1.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-2.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-3.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-4.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-5.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-6.png" alt="">
+              <div class="archive-card-title">Cild. 3 Nömrə. 1 (2026)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col archive-extra d-none">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-4.png" alt="">
+              <div class="archive-card-title">Cild. 2 Nömrə. 2 (2025)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+          <div class="col archive-extra d-none">
+            <article><img class="archive-card-img" src="assets/images/archive/archive-5.png" alt="">
+              <div class="archive-card-title">Cild. 2 Nömrə. 1 (2025)</div><a class="archive-card-link" href="#">View
+                Journal →</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-banner" id="about">
+      <div class="container">
+        <div class="info-banner-inner">
+          <!-- INFO SECTION -->
+          <div class="journal-info">
+            <div class="container">
+
+              <div class="journal-info-card">
+
+                <!-- TABS -->
+                <ul class="nav nav-tabs journal-tabs" id="journalTabs" role="tablist">
+
+                  <!-- Oxucular -->
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="readers-tab" data-bs-toggle="tab" data-bs-target="#readers"
+                      type="button" role="tab" aria-controls="readers" aria-selected="true">
+                      Oxucular üçün
+                    </button>
+                  </li>
+
+
+                  <!-- Müəlliflər -->
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="authors-tab" data-bs-toggle="tab" data-bs-target="#authors"
+                      type="button" role="tab" aria-controls="authors" aria-selected="false">
+                      Müəlliflər üçün
+                    </button>
+                  </li>
+
+
+                  <!-- Kitabxanaçılar -->
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="librarians-tab" data-bs-toggle="tab" data-bs-target="#librarians"
+                      type="button" role="tab" aria-controls="librarians" aria-selected="false">
+                      Kitabxanaçılar üçün
+                    </button>
+                  </li>
+
+                </ul>
+
+
+                <!-- TAB CONTENT -->
+                <div class="tab-content journal-tab-content" id="journalTabsContent">
+
+                  <!-- READERS -->
+                  <div class="tab-pane fade show active" id="readers" role="tabpanel" aria-labelledby="readers-tab"
+                    tabindex="0">
+
+                    <p>
+                      Oxucuların nəşr bildirişi xidmətində
+                      qeydiyyatdan keçmələri tövsiyə edilir.
+                      Jurnal əsas səhifəsinin üst hissəsində yer
+                      alan
+                      <a href="#">Qeydiyyat</a>
+                      linki vasitəsilə bu əməliyyat həyata
+                      keçirilə bilər.
+                    </p>
+
+                    <p>
+                      Bu qeydiyyatla hər yeni nömrə nəşr/dərc
+                      edildiyində Mündəricat səhifəsi email
+                      vasitəsilə oxucuya çatdırılır.
+                      Jurnalın
+                      <a href="#">təhlükəsizlik qaydalarına baxın</a>.
+                    </p>
+
+                    <p>
+                      Müəlliflərin kimlik/identifikasiya
+                      məlumatları və email adresləri heç bir
+                      şəkildə başqa məqsədlər üçün istifadə
+                      edilməyəcəkdir.
+                    </p>
+
+                  </div>
+
+
+                  <!-- AUTHORS -->
+                  <div class="tab-pane fade" id="authors" role="tabpanel" aria-labelledby="authors-tab" tabindex="0">
+
+                    <p>
+                      Müəlliflər məqalələrini jurnalın elektron
+                      sistemi vasitəsilə təqdim edə bilərlər.
+                      Məqalə təqdim etməzdən əvvəl müəllif
+                      qaydaları ilə tanış olmaq tövsiyə olunur.
+                    </p>
+
+                    <p>
+                      Məqalə göndərilməsi zamanı müəllifdən
+                      tələb olunan məlumatlar tam və düzgün
+                      şəkildə daxil edilməlidir.
+                    </p>
+
+                    <p>
+                      Göndərilən materiallar redaksiya heyəti
+                      tərəfindən nəzərdən keçirilir və
+                      qiymətləndirmə prosesi həyata keçirilir.
+                    </p>
+
+                  </div>
+
+
+                  <!-- LIBRARIANS -->
+                  <div class="tab-pane fade" id="librarians" role="tabpanel" aria-labelledby="librarians-tab"
+                    tabindex="0">
+
+                    <p>
+                      Kitabxanaçılar jurnalın bütün nəşrlərinə
+                      və arxiv materiallarına elektron formada
+                      çıxış əldə edə bilərlər.
+                    </p>
+
+                    <p>
+                      Jurnalın əvvəlki və cari nömrələri
+                      arxiv bölməsində yerləşdirilir və
+                      istifadəçilər üçün əlçatan olur.
+                    </p>
+
+                    <p>
+                      Əlavə məlumat və texniki məsələlərlə
+                      bağlı jurnalın əlaqə bölməsindən istifadə
+                      edə bilərsiniz.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="announcements" id="announcements">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Elanlar</h2>
+            <div class="section-subtitle">Standout projects making waves around the web</div>
+          </div><button class="view-more">View more</button>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+          <div class="col">
+            <article class="announcement-card"><img class="announcement-img"
+                src="assets/images/announcements/announcement-1.png" alt="">
+              <div class="announcement-body">
+                <div class="announcement-meta"><i class="bi bi-calendar3"></i> 06.05.2026 &nbsp; <i
+                    class="bi bi-eye"></i> 125</div>
+                <h3 class="announcement-title">AzTU-da 14-cü Qlobal İstiləşmə üzrə beynəlxalq konfrans keçiriləcək</h3>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="announcement-card"><img class="announcement-img"
+                src="assets/images/announcements/announcement-2.png" alt="">
+              <div class="announcement-body">
+                <div class="announcement-meta"><i class="bi bi-calendar3"></i> 06.05.2026 &nbsp; <i
+                    class="bi bi-eye"></i> 125</div>
+                <h3 class="announcement-title">UNEC-də ən son təhsil proqramları və yeni imkanlar təqdim edildi</h3>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="announcement-card"><img class="announcement-img"
+                src="assets/images/announcements/announcement-3.png" alt="">
+              <div class="announcement-body">
+                <div class="announcement-meta"><i class="bi bi-calendar3"></i> 06.05.2026 &nbsp; <i
+                    class="bi bi-eye"></i> 125</div>
+                <h3 class="announcement-title">AzTU-da 14-cü Qlobal İstiləşmə üzrə beynəlxalq konfrans keçiriləcək</h3>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="announcement-card"><img class="announcement-img"
+                src="assets/images/announcements/announcement-4.png" alt="">
+              <div class="announcement-body">
+                <div class="announcement-meta"><i class="bi bi-calendar3"></i> 06.05.2026 &nbsp; <i
+                    class="bi bi-eye"></i> 125</div>
+                <h3 class="announcement-title">UNEC-də 4 ilə 2 diplom qazanmaq imkanı – UDİP proqramı</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="footer-brand">UNEC TƏLƏBƏ<br>TƏDQİQATLARI JURNALI</div>
+          <div class="footer-quote">“Təhsil millətin gələcəyidir”<br><i>Heydər Əliyev</i></div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-heading">Sürətli keçid</div><a class="footer-link" href="#home">Ana səhifə</a><a
+            class="footer-link" href="#archive">Arxiv</a><a class="footer-link" href="#announcements">Elanlar</a><a
+            class="footer-link" href="#contact">Əlaqə</a><a class="footer-link" href="#systems">Açıq Jurnal
+            sistemləri</a>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="footer-heading">Haqqında</div><a class="footer-link" href="#about">Jurnal haqqında</a><a
+            class="footer-link" href="#">Məqalə Təqdimatı</a><a class="footer-link" href="#">Redaksiya heyəti</a><a
+            class="footer-link" href="#">Məlumat</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <div>© <span data-current-year></span> Azərbaycan Dövlət İqtisad Universiteti. Bütün hüquqlar qorunur.</div>
+        <div>Məxfilik siyasəti<span class="footer-separator">|</span>Qaydalar və
+          şərtlər</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
