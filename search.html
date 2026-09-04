@@ -140,200 +140,149 @@
             <nav class="archive-breadcrumb-nav">
                 <a href="#">Ana səhifə</a>
                 <span>/</span>
-                <a href="#">Arxiv</a>
-                <span>/</span>
-                <a href="#">Cild. 3 Nömrə. 1 (2026)</a>
-                <span>/</span>
-                <a href="#" class="current">Məqalələr</a>
+                <a href="#" class="current">Axtarış</a>
             </nav>
         </div>
     </section>
-
-
-    <!-- ================= JOURNAL HERO ================= -->
-    <section class="journal-hero">
-        <div class="container archive-container">
-            <div class="row align-items-center g-4">
-
-                <!-- Text -->
-                <div class="col-lg-7">
-                    <div class="journal-info">
-                        <p><span class="gray-text">Nömrə: </span> <span class="current">Cild. 3 Nömrə. 1 (2026): UNEC
-                                Tələbə Tədqiqatları Jurnalı</span>
-                        </p>
-                        <h1>
-                            MUHASEBE VE DENETİMDE BİLİŞİM TEKNOLOJİLERİ KULLANIMI: TÜRKİYE-AZERBAYCAN KARŞILAŞTIRMASI
-                        </h1>
-
-                        <div class="journal-date">
-                            <strong>25</strong>
-                            <span>FEVRAL 2026</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Image -->
-                <div class="col-lg-5">
-                    <div class="journal-cover">
-                        <img src="assets/images/journals/main-journal.jpg" alt="UNEC Tələbə Tədqiqatları Jurnalı">
-                    </div>
-                </div>
-
+    <!-- ================= search ================= -->
+    <main class="search-main">
+        <div class="container">
+            <div class="search-heading">
+                <h1>Axtarış</h1>
             </div>
-        </div>
-    </section>
 
+            <div class="search-section">
+                <form class="search-filter-form" id="searchForm">
+                    <div class="search-field search-field-text">
+                        <input id="searchTitle" type="text" placeholder="Məqalənin adı" aria-label="Məqalənin adı" />
+                        <button type="button" class="clear-btn" data-clear="searchTitle" aria-label="Təmizlə">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
 
-    <!-- ================= JOURNAL CONTENT ================= -->
-    <main class="archive-main">
-        <div class="container archive-container">
+                    <div class="search-field search-field-text">
+                        <input id="searchAuthor" type="text" placeholder="Müəllif" aria-label="Müəllif" />
+                        <button type="button" class="clear-btn" data-clear="searchAuthor" aria-label="Təmizlə">
+                            <i class="bi bi-pen"></i>
+                        </button>
+                    </div>
 
-            <!-- PDF + DOI -->
-            <div class="article-layout">
-                <div class="article-main-column">
-                    <div class="journal-links">
+                    <div class="date-picker-wrapper">
+                        <div class="search-field search-field-date" id="datePickerTrigger" role="button" tabindex="0"
+                            aria-label="Tarix aralığı">
+                            <span id="dateRangeLabel">Tarix aralığı</span>
 
-                        <a href="#" class="main-pdf-btn">
-                            <i class="bi bi-file-earmark-pdf"></i>
-                            <span>PDF</span>
-                        </a>
+                            <button type="button" class="field-icon">
+                                <i class="bi bi-calendar3"></i>
 
-                        <div class="doi-link">
-                            <span>DOI:</span>
-
-                            <a href="#" target="_blank">
-                                https://doi.org/10.30546/0a2ted920
-                            </a>
-
-                            <i class="bi bi-box-arrow-up-right"></i>
+                            </button>
                         </div>
 
-                    </div>
+                        <div class="date-picker-popover" id="datePickerPopover" aria-label="Tarix seçimi">
+                            <div class="date-picker-header">
+                                <button type="button" class="date-nav" data-nav="prev" aria-label="Öncəki ay">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <div class="date-picker-selectors">
+                                    <label class="date-picker-select-wrap">
+                                        <select id="dateMonthSelect" class="date-picker-select"
+                                            aria-label="Ay seçin"></select>
+                                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                                    </label>
+                                    <label class="date-picker-select-wrap date-picker-year-wrap">
+                                        <select id="dateYearSelect" class="date-picker-select"
+                                            aria-label="İl seçin"></select>
+                                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                                    </label>
+                                </div>
+                                <button type="button" class="date-nav" data-nav="next" aria-label="Sonrakı ay">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
 
-                    <div class="article-info">
-                        <p class="mb-2"><span class="gray-text">Müəllif: </span> <span>Asude Nuriyeva</span></p>
-                        <p><span class="gray-text">Açar sözlər: </span> <span>bilişim teknolojileri, bulut tabanlı
-                                yazılımlar,
-                                dijital dönüşüm, e-fatura, veri analitiği</span></p>
-                    </div>
-                    <!-- Description -->
-                    <div class="journal-description">
-                        <div class="archive-section-title">
-                            Xülasə
-                        </div>
-                        <p>
-                            Muhasebe ve denetim süreçlerinde bilişim teknolojilerinin entegrasyonu, finansal işlemlerin
-                            doğruluğunu, hızını ve şeffaflığını yükselterek ekonomik verimliliği güçlendirir. Gelişmekte
-                            olan
-                            ekonomilerde bu teknolojiler, küresel rekabet avantajı ve yasal uyum açısından
-                            vazgeçilmezdir.
-                            Türkiye ve Azerbaycan, ekonomik yapı ve teknolojik altyapı bakımından farklılıklar gösterse
-                            de, her
-                            iki ülke dijital dönüşümde kayda değer ilerlemeler kaydetmektedir. Ancak KOBİ’lerin
-                            adaptasyon
-                            zorlukları ile siber güvenlik riskleri, uygulamaların etkinliğini kısıtlamaktadır. Bulut
-                            bilişim,
-                            yapay zeka ve veri analitiği gibi yenilikler muhasebe işlemlerini otomatikleştirerek hata
-                            oranlarını
-                            düşürmekte ve gerçek zamanlı veri erişimini mümkün kılmaktadır. Denetim süreçlerinde
-                            blockchain ve
-                            büyük veri analizi, izlenebilirlik ile şeffaflığı artırarak güvenilirliği pekiştirmektedir.
-                            Bu
-                            teknolojilerin benimsenmesi maliyet tasarrufu sağlarken karar alma süreçlerini
-                            hızlandırmaktadır. Bu
-                            araştırma, Türkiye ve Azerbaycan’daki muhasebe profesyonellerine, işletmelere ve politika
-                            yapıcılara
-                            önemli katkılar sunmayı hedeflemektedir. Araştırma bulguları, BT’nin muhasebe ve denetim
-                            süreçlerinde nasıl etkin kullanılabileceğine dair öneriler sunarak, işletmelerin finansal
-                            süreçlerini optimize etmelerine yardımcı olabilir. Ayrıca, her iki ülkedeki yasal
-                            düzenleyiciler ve
-                            denetim otoriteleri için, BT entegrasyonunu teşvik edecek politikaların geliştirilmesinde
-                            rehber
-                            niteliği taşıyabilir (Deloitte, 2023). Türkiye ve Azerbaycan arasındaki karşılaştırmalı
-                            analiz, her
-                            iki ülkenin birbirinden öğrenebileceği iyi uygulamaları ortaya koyarak, bölgesel iş
-                            birliğini
-                            güçlendirebilir. Son olarak, çalışma, akademik literatüre katkı sağlayarak, muhasebe ve
-                            denetimde BT
-                            kullanımına yönelik gelecekteki araştırmalara zemin hazırlamayı amaçlamaktadır.
-                        </p>
-                    </div>
-                </div>
+                            <div class="date-range-preview">
+                                <span id="startDatePreview">Jan 6, 2026</span>
+                                <span class="range-divider">—</span>
+                                <span id="endDatePreview">Jan 12, 2026</span>
+                            </div>
 
-                <aside class="article-citation-panel">
-                    <div class="citation-box">
-                        <div class="citation-title">Nece istinad edilir</div>
+                            <div class="date-picker-grid" id="dateGrid"></div>
 
-                        <div class="citation-meta">
-                            <div class="citation-name">2026. MUHASEBE VE DENETİMDE BİLİŞİM TEKNOLOJİLERİ KULLANIMI:
-                                TÜRKİYE-AZERBAYCAN KARŞILAŞTIRMASI</div>
-                            <div class="doi-link">
-                                <span>DOI:</span>
-
-                                <a href="#" target="_blank">
-                                    https://doi.org/10.30546/0a2ted920
-                                </a>
-
-                                <i class="bi bi-box-arrow-up-right"></i>
+                            <div class="date-picker-actions">
+                                <button type="button" class="date-action cancel" id="cancelDate">Cancel</button>
+                                <button type="button" class="date-action apply" id="applyDate">Apply</button>
                             </div>
                         </div>
-
-                        <div class="citation-select-wrap">
-                            <select class="citation-select" aria-label="Daha çox istinad forması">
-                                <option selected>Daha çox istinad forması</option>
-                                <option>APA</option>
-                                <option>MLA</option>
-                                <option>Chicago</option>
-                            </select>
-                        </div>
                     </div>
-                </aside>
+
+                    <button type="submit" class="search-submit-btn">
+                        <span>Axtar</span>
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
             </div>
 
-
-            <!-- ================= ARTICLES ================= -->
-            <section class="unec-journal-sidebar">
-
-                <div class="unec-journal-section-title">
-                    Oxşar məqalələr
+            <div class="search-results">
+                <div class="search-results-header">
+                    <div class="search-results-title-wrap">
+                        <h2>Ən son məqalələr / Axtarışın nəticəsi</h2>
+                        <p>Standout projects making waves around the web</p>
+                    </div>
+                    <button class="search-more-btn" type="button">
+                        Daha çox <i class="bi bi-arrow-right"></i>
+                    </button>
                 </div>
 
-
-                <!-- ARTICLE 1 -->
-                <article class="unec-journal-article">
-
-                    <a href="#" class="unec-journal-article__title">
-                        İNOVATİF EKONOMİYE GEÇİŞTE KOBİ’LERİN FİNANSMAN GÜÇLÜKLERİ VE FINTECH TABANLI ÇÖZÜM STRATEJİLERİ
-                        (AZERBAYCAN ÖRNEĞİ), 
-                        UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI: Cild. 2 Nömrə. 2 (2025): UNEC Tələbə Tədqiqatları Jurnalı
+                <div class="search-result-card">
+                    <a href="#" class="search-result-title">
+                        İNOVATİF EKONOMİYƏ GEÇİŞTE KOBİ’LƏRİN FİNANSMAN GÜCLÜKLƏRİ VƏ FINTECH TƏMƏLİ ÇÖZÜM STRATEJİLƏRİ
+                        (AZERBAYCAN ÖRNEĞİ), UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI: Cild. 2 Nömrə. 2 (2025): UNEC Tələbə
+                        Tədqiqatları Jurnalı
                     </a>
 
-
-                    <div class="unec-journal-article__author">
-                        Asude Nuriyeva (Müəllif)
+                    <div class="search-result-meta">
+                        <span class="search-author">Asude Nuriyeva</span>
+                        <span class="search-date"><i class="bi bi-calendar3"></i> 06.05.2025</span>
                     </div>
+                </div>
 
-                </article>
-
-
-                <!-- ARTICLE 2 -->
-                <article class="unec-journal-article">
-
-                    <a href="#" class="unec-journal-article__title">
-                        UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI: Cild. 1 Nömrə. 1 (2024): UNEC Tələbə Tədqiqatları Jurnalı
+                <div class="search-result-card">
+                    <a href="#" class="search-result-title">
+                        İNOVATİF EKONOMİYƏ GEÇİŞTE KOBİ’LƏRİN FİNANSMAN GÜCLÜKLƏRİ VƏ FINTECH TƏMƏLİ ÇÖZÜM STRATEJİLƏRİ
+                        (AZERBAYCAN ÖRNEĞİ), UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI: Cild. 2 Nömrə. 2 (2025): UNEC Tələbə
+                        Tədqiqatları Jurnalı
                     </a>
 
-
-                    <div class="unec-journal-article__author">
-                        Fəridə Baxşaliyeva (Müəllif)
+                    <div class="search-result-meta">
+                        <span class="search-author">Asude Nuriyeva</span>
+                        <span class="search-date"><i class="bi bi-calendar3"></i> 06.05.2025</span>
                     </div>
-                </article>
+                </div>
 
-                <p class="similar-articles">Bu məqalə üçün əlavə olaraq <a href="#">Təkmilləşmiş bir oxşarlıq axtarışı başladın</a> edə
-                    bilərsiniz.</p>
-            </section>
+                <div class="search-result-card">
+                    <a href="#" class="search-result-title">
+                        İNOVATİF EKONOMİYƏ GEÇİŞTE KOBİ’LƏRİN FİNANSMAN GÜCLÜKLƏRİ VƏ FINTECH TƏMƏLİ ÇÖZÜM STRATEJİLƏRİ
+                        (AZERBAYCAN ÖRNEĞİ), UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI: Cild. 2 Nömrə. 2 (2025): UNEC Tələbə
+                        Tədqiqatları Jurnalı
+                    </a>
+
+                    <div class="search-result-meta">
+                        <span class="search-author">Asude Nuriyeva</span>
+                        <span class="search-date"><i class="bi bi-calendar3"></i> 06.05.2025</span>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Empty -->
+        <section class="empty-section container my-4">
+            <div class="empty-content">
+                <div class="empty-illustration">
+                    <img src="assets/images/empty/search-empty.png" alt="Empty Search">
+                </div>
+                <p>Axtarışa uyğun nəticə tapılmadı.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer" id="contact">
