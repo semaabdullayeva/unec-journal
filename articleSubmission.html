@@ -12,135 +12,132 @@
 
 <body>
     <header class="site-header">
-        <div class="topbar ">
-            <div class="container">
-                <div class="header-left">
-                    <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyu">
-                        <i class="bi bi-list"></i>
-                    </button>
-                    <button class="icon-btn search-btn" aria-label="Axtarış">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </div>
-
-                <div class="header-center">
-                    <h1 class="title">UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI</h1>
-                </div>
-
-                <div class="header-right">
-                    <div class="dropdown" id="langDropdown">
-                        <button class="dropdown-btn" onclick="toggleDropdown()">
-                            <span>AZ</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </button>
-
-                        <div class="dropdown-menu">
-                            <div class="dropdown-item active">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <circle fill="#00B5E2" cx="18" cy="18" r="18" />
-                                        <path fill="#E00034" d="M0 12h36v12H0z" />
-                                        <path fill="#009A44" d="M0 24h36v12H0z" />
-                                        <circle fill="#FFF" cx="17" cy="18" r="4" />
-                                        <circle fill="#E00034" cx="18" cy="18" r="3.2" />
-                                        <polygon fill="#FFF"
-                                            points="21,18 21.7,18.5 21.3,17.7 22,17.2 21.1,17.2 20.8,16.4 20.5,17.2 19.6,17.2 20.3,17.7 19.9,18.5" />
-                                    </svg>
-                                    <span>Azerbaijan</span>
-                                </div>
-                                <i class="bi bi-check-lg"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <clipPath id="uk-clip">
-                                            <circle cx="18" cy="18" r="18" />
-                                        </clipPath>
-                                        <g clip-path="url(#uk-clip)">
-                                            <path fill="#00247D" d="M0 0h36v36H0z" />
-                                            <path stroke="#FFF" stroke-width="6"
-                                                d="M0 0l36 36M36 0L0 36M18 0v36M0 18h36" />
-                                            <path stroke="#CF142B" stroke-width="4" d="M18 0v36M0 18h36" />
-                                            <path stroke="#CF142B" stroke-width="2" d="M0 0l36 36M36 0L0 36" />
-                                        </g>
-                                    </svg>
-                                    <span>English</span>
-                                </div>
-                            </div>
-                            <div class="dropdown-item">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <circle fill="#FFF" cx="18" cy="18" r="18" />
-                                        <path fill="#D52B1E" d="M0 24h36v12H0z" />
-                                        <path fill="#0039A6" d="M0 12h36v12H0z" />
-                                    </svg>
-                                    <span>Russian</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-                    <a href="login.html" class="icon-btn" aria-label="Profil">
-                        <i class="bi bi-person"></i>
-                    </a>
-                </div>
-            </div>
+    <div class="topbar ">
+      <div class="container">
+        <div class="header-left">
+          <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyu">
+            <i class="bi bi-list"></i>
+          </button>
+          <a href="search.html" class="icon-btn search-btn" aria-label="Axtarış">
+            <i class="bi bi-search"></i>
+          </a>
         </div>
 
-        <nav class="nav-row d-flex text-center align-items-center">
-            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Bağla">
-                <i class="bi bi-x"></i>
+        <div class="header-center">
+          <h1 class="title">UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="dropdown" id="langDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+              <span>AZ</span>
+              <i class="bi bi-chevron-down"></i>
             </button>
-            <div class="container">
-                <a class="nav-link-custom" href="#home">Ana səhifə</a>
 
-                <div class="dropdown" id="aboutDropdown">
-                    <button class="nav-link-custom dropdown-btn about-btn" onclick="toggleAboutDropdown()"
-                        type="button">
-                        <span>Haqqımızda</span>
-                        <i class="bi bi-chevron-down"></i>
-                    </button>
-
-                    <div class="dropdown-menu about-menu">
-                        <div class="about-dropdown-item">
-                            <a href="#journal">
-                                Jurnal haqqında
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="#presentation">
-                                Məqalə Təqdimatı
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="#editorial">
-                                Redaksiya heyəti
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="#information">
-                                Məlumat
-                            </a>
-                        </div>
-                    </div>
+            <div class="dropdown-menu">
+              <div class="dropdown-item active">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <circle fill="#00B5E2" cx="18" cy="18" r="18" />
+                    <path fill="#E00034" d="M0 12h36v12H0z" />
+                    <path fill="#009A44" d="M0 24h36v12H0z" />
+                    <circle fill="#FFF" cx="17" cy="18" r="4" />
+                    <circle fill="#E00034" cx="18" cy="18" r="3.2" />
+                    <polygon fill="#FFF"
+                      points="21,18 21.7,18.5 21.3,17.7 22,17.2 21.1,17.2 20.8,16.4 20.5,17.2 19.6,17.2 20.3,17.7 19.9,18.5" />
+                  </svg>
+                  <span>Azerbaijan</span>
                 </div>
 
-                <a class="nav-link-custom" href="#archive">Arxiv</a>
-                <a class="nav-link-custom" href="#announcements">Elanlar</a>
-                <a class="nav-link-custom" href="#contact">Əlaqə</a>
-                <a class="nav-link-custom" href="#systems">Açıq Jurnal sistemləri <i
-                        class="bi bi-box-arrow-up-right"></i></a>
+              </div>
+              <div class="dropdown-item">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <clipPath id="uk-clip">
+                      <circle cx="18" cy="18" r="18" />
+                    </clipPath>
+                    <g clip-path="url(#uk-clip)">
+                      <path fill="#00247D" d="M0 0h36v36H0z" />
+                      <path stroke="#FFF" stroke-width="6" d="M0 0l36 36M36 0L0 36M18 0v36M0 18h36" />
+                      <path stroke="#CF142B" stroke-width="4" d="M18 0v36M0 18h36" />
+                      <path stroke="#CF142B" stroke-width="2" d="M0 0l36 36M36 0L0 36" />
+                    </g>
+                  </svg>
+                  <span>English</span>
+                </div>
+              </div>
+              <div class="dropdown-item">
+                <div class="dropdown-item-left">
+                  <svg class="flag-icon" viewBox="0 0 36 36">
+                    <circle fill="#FFF" cx="18" cy="18" r="18" />
+                    <path fill="#D52B1E" d="M0 24h36v12H0z" />
+                    <path fill="#0039A6" d="M0 12h36v12H0z" />
+                  </svg>
+                  <span>Russian</span>
+                </div>
+              </div>
             </div>
-        </nav>
-    </header>
+          </div>
+          <div class="divider"></div>
+          <a href="login.html" class="icon-btn" aria-label="Profil">
+            <i class="bi bi-person"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-row d-flex text-center align-items-center">
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Bağla">
+        <i class="bi bi-x"></i>
+      </button>
+      <div class="container">
+        <a class="nav-link-custom" href="/index.html">Ana səhifə</a>
+
+        <div class="dropdown" id="aboutDropdown">
+          <button class="nav-link-custom dropdown-btn about-btn" onclick="toggleAboutDropdown()" type="button">
+            <span>Haqqımızda</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+          <div class="dropdown-menu about-menu">
+            <div class="about-dropdown-item">
+              <a href="/journalSubmission.html">
+                Jurnal haqqında
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="/articleSubmission.html">
+                Məqalə Təqdimatı
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="/editorialBoard.html">
+                Redaksiya heyəti
+              </a>
+            </div>
+            <div class="about-dropdown-item">
+              <a href="/information.html">
+                Məlumat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav-link-custom" href="/archive.html">Arxiv</a>
+        <a class="nav-link-custom" href="/announcement.html">Elanlar</a>
+        <a class="nav-link-custom" href="/contact.html">Əlaqə</a>
+        <a class="nav-link-custom" href="#">Açıq Jurnal sistemləri <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+    </nav>
+  </header>
 
     <!-- ================= BREADCRUMB ================= -->
     <section class="archive-breadcrumb">
         <div class="container archive-container">
             <nav class="archive-breadcrumb-nav">
-                <a href="#">Ana səhifə</a>
+                <a href="index.html">Ana səhifə</a>
                 <span>/</span>
-                <a href="#" class="current">Məqalə təqdimatı</a>
+                <span class="current">Məqalə təqdimatı</span>
             </nav>
         </div>
     </section>
@@ -292,35 +289,33 @@
         </div>
     </main>
 
-
-    <footer class="footer" id="contact-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="footer-brand">UNEC TƏLƏBƏ<br>TƏDQİQATLARI JURNALI</div>
-                    <div class="footer-quote">“Təhsil millətin gələcəyidir”<br><i>Heydər Əliyev</i></div>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <div class="footer-heading">Sürətli keçid</div><a class="footer-link" href="#home">Ana səhifə</a><a
-                        class="footer-link" href="#archive">Arxiv</a><a class="footer-link"
-                        href="#announcements">Elanlar</a><a class="footer-link" href="#contact">Əlaqə</a><a
-                        class="footer-link" href="#systems">Açıq Jurnal
-                        sistemləri</a>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="footer-heading">Haqqında</div><a class="footer-link" href="#about">Jurnal haqqında</a><a
-                        class="footer-link" href="#">Məqalə Təqdimatı</a><a class="footer-link" href="#">Redaksiya
-                        heyəti</a><a class="footer-link" href="#">Məlumat</a>
-                </div>
-            </div>
-            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
-                <div>© <span data-current-year></span> Azərbaycan Dövlət İqtisad Universiteti. Bütün hüquqlar qorunur.
-                </div>
-                <div>Məxfilik siyasəti<span class="footer-separator">|</span>Qaydalar və
-                    şərtlər</div>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="footer-brand">UNEC TƏLƏBƏ<br>TƏDQİQATLARI JURNALI</div>
+          <div class="footer-quote">“Təhsil millətin gələcəyidir”<br><i>Heydər Əliyev</i></div>
         </div>
-    </footer>
+        <div class="col-6 col-lg-2">
+          <div class="footer-heading">Sürətli keçid</div><a class="footer-link" href="index.html">Ana səhifə</a><a
+            class="footer-link" href="archive.html">Arxiv</a><a class="footer-link"
+            href="announcements.html">Elanlar</a><a class="footer-link" href="contact.html">Əlaqə</a><a
+            class="footer-link" href="systems.html">Açıq Jurnal
+            sistemləri</a>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="footer-heading">Haqqında</div><a class="footer-link" href="journalSubmission.html">Jurnal
+            haqqında</a><a class="footer-link" href="articleSubmission.html">Məqalə Təqdimatı</a><a class="footer-link"
+            href="editorialBoard.html">Redaksiya heyəti</a><a class="footer-link" href="information.html">Məlumat</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <div>© <span data-current-year></span> Azərbaycan Dövlət İqtisad Universiteti. Bütün hüquqlar qorunur.</div>
+        <div>Məxfilik siyasəti<span class="footer-separator">|</span>Qaydalar və
+          şərtlər</div>
+      </div>
+    </div>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>

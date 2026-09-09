@@ -299,10 +299,11 @@ img {
   background-color: var(--bg-gray);
 }
 
-.dropdown-item.active {
+.dropdown-item.active, .dropdown-item:active {
   background-color: var(--active-blue);
   color: var(--active-text);
 }
+
 
 .flag-icon {
   width: 20px;
@@ -394,7 +395,7 @@ img {
   #aboutDropdown .about-menu {
     position: static;
     box-shadow: none;
-    background: #f5f5f5;
+    background: #fefefe;
     margin-top: 0;
     padding: 8px 0;
   }
@@ -494,7 +495,7 @@ img {
     z-index: 999;
     display: flex;
     flex-direction: column;
-    padding-top: 60px;
+    padding-top: 40px;
     border-bottom: none;
     opacity: 0;
     visibility: hidden;
@@ -562,6 +563,9 @@ img {
   border: 0;
   font-size: 12px;
   padding: 9px 13px;
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-dark-custom {
@@ -569,13 +573,30 @@ img {
   color: #fff;
 }
 
+.btn-dark-custom:hover,
+.btn-dark-custom:focus-visible {
+  background: #2f2f2f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(17, 17, 17, 0.2);
+}
+
 .btn-light-custom {
   background: #f2f2f2;
   color: #222;
 }
 
+.btn-light-custom:hover,
+.btn-light-custom:focus-visible {
+  background: #dedede;
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(17, 17, 17, 0.1);
+}
+
 .hero-image {
   width: 100%;
+  height: 430px;
   aspect-ratio: 1.16 / 1;
   object-fit: cover;
   border-radius: 13px;
@@ -777,13 +798,20 @@ img {
 }
 
 .view-more {
+  display: inline-block;
   border: 0;
   background: #F1F1F1;
   border-radius: 20px;
   padding: 7px 16px;
   font-size: 11px;
-  color: #171C25;
+  color: #263650;
   font-weight: 500;
+  text-decoration: none;
+}
+
+.view-more:hover {
+  background: #263650;
+  color: #fff;
 }
 
 .archive-card-img {
@@ -805,6 +833,16 @@ img {
   font-weight: 500;
   font-size: 11px;
   color: #00517F;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.archive-card-link:hover,
+.archive-card-link:focus-visible {
+  color: #003c60;
+  text-decoration: underline;
+  text-decoration-color: #003c60;
+  outline: none;
 }
 
 .announcement-card {
@@ -813,6 +851,24 @@ img {
   overflow: hidden;
   height: 100%;
   background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.announcement-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.announcement-card-link:hover .announcement-card {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(18, 26, 36, 0.14);
+}
+
+.announcement-card-link:focus-visible {
+  outline: 2px solid #00517f;
+  outline-offset: 4px;
 }
 
 .announcement-img {
@@ -860,7 +916,7 @@ img {
    ======================================== */
 
 .journal-info-card {
-  width: 51%;
+  width: 67%;
   min-height: 330px;
   background: #ffffff;
   border-radius: 12px;
@@ -870,28 +926,43 @@ img {
 
 .journal-tabs {
   display: flex;
+  flex-wrap: nowrap;
   gap: 12px;
   border-bottom: 2px solid #cfcfcf;
   margin: 0;
   padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.journal-tabs .nav-item {
+  flex: 0 0 132px;
+  width: 132px;
+  min-width: 132px;
 }
 
 .journal-tabs .nav-link {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 38px;
+  box-sizing: border-box;
+  min-width: 0;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
   color: #272727;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0 0 17px 0;
   margin: 0;
+  text-align: center;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
 .journal-tabs .nav-link.active {
   color: #272727;
-  font-weight: 600;
 }
 
 .journal-tabs .nav-link.active::after {
@@ -1112,7 +1183,7 @@ img {
 
 .unec-journal-hero {
   width: 100%;
-  height: 318px;
+  height: 316px;
   overflow: hidden;
   border-radius: 11px;
   background: #e9eef2;
@@ -1143,6 +1214,32 @@ img {
   gap: 16px;
 }
 
+.unec-journal-issue-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.unec-journal-issue-link:hover,
+.unec-journal-issue-link:focus-visible {
+  color: inherit;
+  background-color: #f7f7f7;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.unec-journal-issue-link:hover .unec-journal-issue__image,
+.unec-journal-issue-link:focus-visible .unec-journal-issue__image {
+  transform: scale(1.03);
+}
+
+.unec-journal-issue__image {
+  transition: transform 0.2s ease;
+}
+
 .unec-journal-issue {
   display: grid;
   grid-template-columns: 140px minmax(0, 1fr);
@@ -1170,6 +1267,7 @@ img {
   font-size: 12px;
   line-height: 20px;
   color: #2F2F2F;
+  margin-bottom: 0;
 }
 
 @media (max-width: 991.98px) {
@@ -1259,7 +1357,7 @@ img {
   gap: 8px;
   color: #999;
   font-size: 15px;
-  margin-bottom: 17px;
+  margin: 17px 0;
 }
 
 .unec-journal-date i {
@@ -1343,16 +1441,29 @@ img {
   color: #fff;
   font-size: 13px;
   text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.unec-journal-pdf:hover {
+.unec-journal-pdf:hover,
+.unec-journal-pdf:focus-visible {
   color: #fff;
+  background: #182a43;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(35, 58, 91, 0.2);
+  outline: none;
 }
 
 .unec-journal-article .unec-journal-pdf {
   background: #eeeeee;
   color: #222;
   min-width: 97px;
+}
+
+.unec-journal-article .unec-journal-pdf:hover,
+.unec-journal-article .unec-journal-pdf:focus-visible {
+  background: #d9d9d9;
+  color: #111;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
 .doi-link {
@@ -1429,6 +1540,16 @@ img {
   font-size: 12px;
   line-height: 16px;
   color: #00517F;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.unec-journal-article__title:hover,
+.unec-journal-article__title:focus-visible {
+  color: #003c60;
+  text-decoration: underline;
+  text-decoration-color: #003c60;
+  outline: none;
 }
 
 .unec-journal-article__author {
@@ -2540,7 +2661,7 @@ body:has(.auth-modal:not([hidden])) {
 }
 
 .profile-brand {
-  width: 150px;
+  /* width: 150px; */
   color: #20242d;
   font-size: 13px;
   font-weight: 700;

@@ -88,6 +88,50 @@ window.addEventListener("click", function (e) {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const languageDropdown = document.getElementById("langDropdown");
+  const languageButton = languageDropdown?.querySelector(".dropdown-btn span");
+  const languageItems = languageDropdown?.querySelectorAll(".dropdown-item");
+  const languageCodes = { Azerbaijan: "AZ", English: "EN", Russian: "RU" };
+
+  const setLanguage = (item) => {
+    const languageName = item
+      .querySelector(".dropdown-item-left span")
+      ?.textContent.trim();
+    if (!languageName || !languageButton) return;
+
+    languageButton.textContent =
+      languageCodes[languageName] || languageName.slice(0, 2).toUpperCase();
+    languageItems?.forEach((languageItem) => {
+      const isActive = languageItem === item;
+      languageItem.classList.toggle("active", isActive);
+    });
+    document.documentElement.lang =
+      languageCodes[languageName] === "AZ"
+        ? "az"
+        : languageCodes[languageName].toLowerCase();
+    localStorage.setItem("unec-language", languageName);
+  };
+
+  if (languageDropdown && languageItems?.length) {
+    const savedLanguage = localStorage.getItem("unec-language");
+    const initialItem =
+      [...languageItems].find(
+        (item) =>
+          item.querySelector(".dropdown-item-left span")?.textContent.trim() ===
+          savedLanguage,
+      ) ||
+      languageDropdown.querySelector(".dropdown-item.active") ||
+      languageItems[0];
+
+    setLanguage(initialItem);
+    languageItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        setLanguage(item);
+        languageDropdown.classList.remove("active");
+      });
+    });
+  }
+
   const authViews = document.querySelectorAll("[data-auth-view]");
   document.querySelectorAll("[data-auth-target]").forEach((trigger) => {
     trigger.addEventListener("click", () => {
@@ -165,9 +209,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileMenuToggle = document.querySelector(
     "[data-profile-menu-toggle]",
   );
-  profileMenuToggle?.addEventListener("click", () => {
-    profileSidebar?.classList.toggle("is-open");
-  });
+  const setProfileSidebarState = (isOpen) => {
+    if (!profileSidebar) return;
+    profileSidebar.classList.toggle("is-open", isOpen);
+    profileSidebar.classList.toggle("is-closed", !isOpen);
+    document.body.classList.toggle("sidebar-collapsed", !isOpen);
+    profileMenuToggle?.setAttribute(
+      "aria-label",
+      isOpen ? "Menyunu bağla" : "Menyunu aç",
+    );
+    profileMenuToggle?.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  if (profileSidebar && profileMenuToggle) {
+    const initiallyOpen = !window.matchMedia("(max-width: 767.98px)").matches;
+    setProfileSidebarState(initiallyOpen);
+    profileMenuToggle.addEventListener("click", () => {
+      setProfileSidebarState(!profileSidebar.classList.contains("is-open"));
+    });
+  }
 
   const profileTabs = document.querySelectorAll("[data-profile-tab]");
   const profilePanels = document.querySelectorAll("[data-profile-panel]");
@@ -397,6 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (target) {
           target.value = "";
           target.focus();
+          filterCards();
         }
       });
     });
@@ -528,8 +589,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       btn.textContent = day;
       btn.addEventListener("click", () => {
-        const selectingFirstDate =
-          !dateTrigger.dataset.startDate || dateTrigger.dataset.endDate;
         const selectedDate = new Date(
           date.getFullYear(),
           date.getMonth(),
@@ -578,7 +637,7 @@ document.addEventListener("DOMContentLoaded", () => {
             : "Tarix aralığı";
 
         buildCalendar();
-        if (selectingFirstDate) {
+        if (rangeStart && rangeEnd) {
           datePopover.classList.remove("open");
         }
       });
@@ -608,11 +667,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    dateTrigger.dataset.startDate = new Date(2026, 0, 6).toISOString();
-    dateTrigger.dataset.endDate = new Date(2026, 0, 12).toISOString();
-    startPreview.textContent = "Jan 6, 2026";
-    endPreview.textContent = "Jan 12, 2026";
-    dateLabel.textContent = "Jan 6, 2026 — Jan 12, 2026";
+    dateTrigger.dataset.startDate = "";
+    dateTrigger.dataset.endDate = "";
+    startPreview.textContent = "Başlanğıc tarixi";
+    endPreview.textContent = "Son tarix";
+    dateLabel.textContent = "Tarix aralığı";
     buildCalendar();
 
     document.querySelectorAll(".date-nav").forEach((button) => {
@@ -649,8 +708,8 @@ document.addEventListener("DOMContentLoaded", () => {
       dateTrigger.dataset.startDate = "";
       dateTrigger.dataset.endDate = "";
       dateLabel.textContent = "Tarix aralığı";
-      startPreview.textContent = "Jan 6, 2026";
-      endPreview.textContent = "Jan 12, 2026";
+      startPreview.textContent = "Başlanğıc tarixi";
+      endPreview.textContent = "Son tarix";
       datePopover.classList.remove("open");
       buildCalendar();
     });
