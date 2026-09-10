@@ -139,9 +139,12 @@
               type="file" accept="image/*"></div>
           <label for="profile-bio">Tərcümeyi-hal</label>
           <div class="profile-editor">
-            <div class="profile-editor-toolbar"><button type="button">B</button><button
-                type="button"><em>I</em></button><button type="button"><u>U</u></button><button
-                type="button">Link</button><button type="button">&lt;/&gt;</button></div>
+            <div class="profile-editor-toolbar" role="toolbar" aria-label="Tərcümeyi-hal formatı"><button type="button"
+                data-editor-command="bold"><strong>B</strong></button><button type="button"
+                data-editor-command="italic"><em>I</em></button><button type="button"
+                data-editor-command="underline"><u>U</u></button><button type="button"
+                data-editor-command="createLink">Link</button><button type="button"
+                data-editor-command="code">&lt;/&gt;</button></div>
             <div id="profile-bio" class="profile-editor-body profile-bio-editor" contenteditable="true" role="textbox"
               aria-label="Tərcümeyi-hal"></div>
           </div>

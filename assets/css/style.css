@@ -2719,6 +2719,49 @@ body:has(.auth-modal:not([hidden])) {
   transform: translateX(0);
 }
 
+.profile-sidebar.is-closed .profile-sidebar-brand .profile-brand {
+  visibility: hidden;
+}
+
+.profile-sidebar.is-closed nav {
+  position: absolute;
+  top: 78px;
+  left: calc(100% - 65px);
+  width: 65px;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.profile-sidebar.is-closed nav a {
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+}
+
+.profile-sidebar.is-closed nav a span {
+  display: none;
+}
+
+.profile-sidebar.is-closed nav a i {
+  margin: 0;
+  font-size: 18px;
+}
+
+.profile-sidebar.is-closed .profile-logout {
+  position: absolute;
+  bottom: 24px;
+  left: calc(100% - 65px);
+  width: 65px;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+.profile-sidebar.is-closed .profile-logout i {
+  font-size: 18px;
+}
+
 .profile-sidebar nav {
   display: flex;
   flex-direction: column;
@@ -2768,6 +2811,7 @@ body.sidebar-collapsed .profile-header {
 
 body.sidebar-collapsed .profile-main {
   margin-left: 0;
+  padding-left: 112px;
 }
 
 .profile-sidebar-toggle {
@@ -2818,6 +2862,16 @@ body.sidebar-collapsed .profile-main {
     transform: translateX(0);
   }
 
+  .profile-sidebar.is-closed nav {
+    left: calc(100% - 58px);
+    width: 58px;
+  }
+
+  .profile-sidebar.is-closed .profile-logout {
+    left: calc(100% - 58px);
+    width: 58px;
+  }
+
   .profile-header {
     left: 0;
   }
@@ -2833,6 +2887,8 @@ body.sidebar-collapsed .profile-main {
 }
 
 .profile-page {
+  --profile-sidebar-width: 218px;
+  --profile-header-height: 62px;
   min-height: 100vh;
   background: #f5f5f5;
   color: #20242d;
@@ -2941,8 +2997,8 @@ body.sidebar-collapsed .profile-main {
 }
 
 .profile-main {
-  width: min(100%, 1024px);
-  padding: 30px;
+  width: 100%;
+  padding: 80px 30px 30px;
 }
 
 .profile-tabs {
@@ -3508,7 +3564,7 @@ body:has(.profile-role-modal:not([hidden])) {
     bottom: 0;
     left: 0;
     width: min(82vw, 218px);
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + 58px));
     transition: transform .2s ease;
     box-shadow: 8px 0 20px rgba(0, 0, 0, .12);
   }
@@ -3519,7 +3575,11 @@ body:has(.profile-role-modal:not([hidden])) {
 
   .profile-main {
     width: 100%;
-    padding: 16px 12px 30px;
+    padding: 86px 12px 30px;
+  }
+
+  body.sidebar-collapsed .profile-main {
+    padding-left: 76px;
   }
 
   .profile-tabs {

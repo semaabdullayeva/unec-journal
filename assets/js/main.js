@@ -1,4 +1,6 @@
-// Mobile Menu Toggle
+// =========================
+// SITE-WIDE MOBILE MENU
+// =========================
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileCloseBtn = document.getElementById("mobileCloseBtn");
 
@@ -80,6 +82,9 @@ function toggleAboutDropdown() {
   dropdown.classList.toggle("active");
 }
 
+// =========================
+// SITE-WIDE LANGUAGE AND ABOUT DROPDOWNS
+// =========================
 window.addEventListener("click", function (e) {
   const dropdown = document.getElementById("aboutDropdown");
   if (dropdown && !dropdown.contains(e.target)) {
@@ -87,6 +92,9 @@ window.addEventListener("click", function (e) {
   }
 });
 
+// =========================
+// JOURNAL CONTENT TABS
+// =========================
 const journalTabs = document.querySelectorAll("[data-journal-tab]");
 
 const journalPanels = document.querySelectorAll("[data-journal-panel]");
@@ -108,6 +116,9 @@ journalTabs.forEach((tab) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================
+  // LANGUAGE PREFERENCE
+  // =========================
   const languageDropdown = document.getElementById("langDropdown");
   const languageButton = languageDropdown?.querySelector(".dropdown-btn span");
   const languageItems = languageDropdown?.querySelectorAll(".dropdown-item");
@@ -152,6 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // =========================
+  // AUTHENTICATION VIEWS AND MODALS
+  // =========================
   const authViews = document.querySelectorAll("[data-auth-view]");
   document.querySelectorAll("[data-auth-target]").forEach((trigger) => {
     trigger.addEventListener("click", () => {
@@ -225,6 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (authModal) authModal.hidden = false;
   });
 
+  // =========================
+  // PROFILE SIDEBAR
+  // =========================
   const profileSidebar = document.querySelector("[data-profile-sidebar]");
   const profileMenuToggle = document.querySelector(
     "[data-profile-menu-toggle]",
@@ -249,6 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // =========================
+  // PROFILE TABS AND FORMS
+  // =========================
   const profileTabs = document.querySelectorAll("[data-profile-tab]");
   const profilePanels = document.querySelectorAll("[data-profile-panel]");
   profileTabs.forEach((tab) => {
@@ -281,9 +301,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // =========================
+  // PROFILE EDITORS, ROLE MODAL, AND API KEY
+  // =========================
   document.querySelectorAll("[data-editor-command]").forEach((button) => {
     button.addEventListener("click", () => {
-      const editor = document.getElementById("profile-signature");
+      const editor = button
+        .closest(".profile-editor")
+        ?.querySelector(".profile-editor-body");
       if (!editor) return;
       editor.focus();
       const command = button.dataset.editorCommand;
@@ -309,6 +334,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (roleModal) roleModal.hidden = true;
     });
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && roleModal && !roleModal.hidden) {
+      roleModal.hidden = true;
+    }
+  });
   document
     .querySelector("[data-role-form]")
     ?.addEventListener("submit", (event) => {
@@ -321,6 +351,9 @@ document.addEventListener("DOMContentLoaded", () => {
       apiKey.value = `unec_${crypto.randomUUID().replaceAll("-", "").slice(0, 24)}`;
   });
 
+  // =========================
+  // ARCHIVE CARD EXPANSION
+  // =========================
   const archiveBtn = document.querySelector("[data-view-archive]");
   const hiddenCards = document.querySelectorAll(".archive-extra");
 
@@ -330,6 +363,9 @@ document.addEventListener("DOMContentLoaded", () => {
     archiveBtn.textContent = show ? "View less" : "View more";
   });
 
+  // =========================
+  // GENERIC TABS
+  // =========================
   document.querySelectorAll(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
       document
@@ -361,6 +397,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+  // =========================
+  // ARTICLE SEARCH AND FILTERING
+  // =========================
   const searchForm = document.getElementById("searchForm");
   const titleInput = document.getElementById("searchTitle");
   const authorInput = document.getElementById("searchAuthor");
@@ -518,6 +557,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // =========================
+  // SEARCH DATE RANGE PICKER
+  // =========================
   const currentDate = new Date();
   const dateRange = {
     currentMonth: new Date(
