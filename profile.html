@@ -2,416 +2,260 @@
 <html lang="az">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profil | UNEC Tələbə Tədqiqatları Jurnalı</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* =========================================================
-           PROFILE PAGE — Sidebar + Header
-           ========================================================= */
-
-        :root {
-            --profile-sidebar-width: 280px;
-            --profile-header-height: 58px;
-            --profile-blue: #2f6fa9;
-            --profile-text: #242424;
-            --profile-muted: #777;
-            --profile-border: #e5e5e5;
-            --profile-bg: #f7f7f7;
-        }
-
-        /* ---------- LEFT SIDEBAR ---------- */
-
-        .profile-sidebar {
-            position: fixed;
-            z-index: 1000;
-            inset: 0 auto 0 0;
-            width: var(--profile-sidebar-width);
-            height: 100vh;
-            background: #fff;
-            border-right: 1px solid var(--profile-border);
-            display: flex;
-            flex-direction: column;
-            padding: 0 19px 24px;
-            box-sizing: border-box;
-            transition: transform .25s ease;
-        }
-
-        .profile-sidebar.is-closed {
-            transform: translateX(calc(-100% + 65px));
-        }
-
-        .profile-sidebar.is-open {
-            transform: translateX(0);
-        }
-        .profile-sidebar nav {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .profile-sidebar-brand {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            min-height: 58px;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 0 0 0 4px;
-            border-bottom: 1px solid var(--profile-border);
-        }
-
-        .profile-sidebar-brand .profile-brand {
-            width: auto;
-            color: var(--profile-text);
-            font-size: 17px;
-            line-height: 1.45;
-        }
-
-
-        .profile-header {
-            position: fixed;
-            z-index: 900;
-            top: 0;
-            left: var(--profile-sidebar-width);
-            right: 0;
-            background: #fff;
-            border-bottom: 1px solid var(--profile-border);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 0 28px;
-            box-sizing: border-box;
-            height: var(--profile-header-height);
-        }
-
-        body.sidebar-collapsed .profile-header {
-            left: 0;
-        }
-
-        body.sidebar-collapsed .profile-main {
-            margin-left: 0;
-        }
-
-        .profile-sidebar-toggle {
-            position: absolute;
-            right: 0;
-            top: 14px;
-            width: 26px;
-            height: 26px;
-            padding: 0;
-            border: 1px solid #8e9398;
-            border-radius: 7px;
-            background: #fff;
-            color: #555;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .profile-sidebar-toggle i {
-            transition: transform .25s ease;
-        }
-
-        .profile-sidebar.is-closed .profile-sidebar-toggle i {
-            transform: rotate(180deg);
-        }
-
-
-        .profile-layout {
-            display: block;
-            min-height: 100vh;
-        }
-
-        .profile-main {
-            margin-left: var(--profile-sidebar-width);
-            padding: calc(var(--profile-header-height) + 48px) 47px 60px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        @media (max-width: 767.98px) {
-            .profile-sidebar {
-                width: min(86vw, var(--profile-sidebar-width));
-                transform: translateX(calc(-100% + 65px));
-            }
-
-            .profile-sidebar.is-open {
-                transform: translateX(0);
-            }
-
-            .profile-header {
-                left: 0;
-            }
-
-            .profile-main {
-                margin-left: 0;
-                padding: calc(var(--profile-header-height) + 24px) 16px 40px;
-            }
-
-            .profile-sidebar-brand .profile-brand {
-                font-size: 14px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil | UNEC Tələbə Tədqiqatları Jurnalı</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body class="profile-page">
-    <header class="profile-header">
-        <div class="profile-header-actions">
-            <button type="button" aria-label="Bildirişlər"><i class="bi bi-bell"></i></button>
-            <span></span>
-            <button type="button" aria-label="İstifadəçi menyusu"><i class="bi bi-person"></i></button>
-        </div>
-    </header>
-
-    <div class="profile-layout">
-        <aside class="profile-sidebar" data-profile-sidebar>
-            <div class="profile-sidebar-brand">
-                <a class="profile-brand" href="index.html">UNEC TƏLƏBƏ<br>TƏDQİQATLARI JURNALI</a>
-                <button class="profile-sidebar-toggle" type="button" aria-label="Menyunu bağla"
-                    data-profile-menu-toggle>
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-            </div>
-            <nav aria-label="Profil menyusu">
-                <a class="active" href="profile.html"><i class="bi bi-person"></i><span>Profil</span></a>
-                <a href="#submissions"><i class="bi bi-file-earmark-text"></i><span>Məqalələr/təqdimatlar</span></a>
-                <a href="#review"><i class="bi bi-clipboard-check"></i><span>İstifadəçi elmi</span></a>
-            </nav>
-            <a class="profile-logout" href="login.html"><i class="bi bi-box-arrow-right"></i>Çıxış et</a>
-        </aside>
-
-        <main class="profile-main">
-            <div class="profile-tabs" role="tablist" aria-label="Profil bölmələri">
-                <button class="active" type="button" role="tab" aria-selected="true"
-                    data-profile-tab="personal">Şəxsiyyət</button>
-                <button type="button" role="tab" aria-selected="false" data-profile-tab="contact">Əlaqə</button>
-                <button type="button" role="tab" aria-selected="false" data-profile-tab="role">Rol</button>
-                <button type="button" role="tab" aria-selected="false" data-profile-tab="social">İctimai</button>
-                <button type="button" role="tab" aria-selected="false" data-profile-tab="password">Şifrə</button>
-                <button type="button" role="tab" aria-selected="false"
-                    data-profile-tab="notifications">Bildirişlər</button>
-                <button type="button" role="tab" aria-selected="false" data-profile-tab="api">API açarı</button>
-            </div>
-
-            <section class="profile-panel" data-profile-panel="personal" role="tabpanel">
-                <div class="profile-panel-intro"><strong>İstifadəçi adı</strong><span>kamrantalibli</span></div>
-                <hr>
-                <form class="profile-form" data-profile-form>
-                    <div class="profile-field-grid">
-                        <div><label for="profile-first-name">Ad *</label><input id="profile-first-name" value="Kamran"
-                                required></div>
-                        <div><label for="profile-last-name">Soyadı</label><input id="profile-last-name" value="Talibli">
-                        </div>
-                    </div>
-                    <p class="profile-hint">Müəllifin yayınlanmış əsərdə qeyd olunması lazım olduğundan zəhmət olmasa
-                        tam adı qeyd edin. Nümunə: Dr. Alan P. Mwandenga</p>
-                    <label for="profile-preferred-name">Dərc olunacaq ad</label>
-                    <input id="profile-preferred-name">
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p>
-                    <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
-                    <button class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-
-            <section class="profile-panel profile-contact-panel" data-profile-panel="contact" role="tabpanel" hidden>
-                <form class="profile-form" data-profile-form>
-                    <div class="profile-field-grid">
-                        <div><label for="profile-email">Email *</label><input id="profile-email" type="email"
-                                value="bytalibli2@gmail.com" required></div>
-                        <div><label for="profile-phone">Telefon</label><input id="profile-phone" type="tel"></div>
-                        <div><label for="profile-organization">Qurum</label><input id="profile-organization"
-                                value="İqtisad"></div>
-                        <div><label for="profile-contact-country">Ölkə *</label>
-                            <div class="profile-select-wrap"><select id="profile-contact-country" required>
-                                    <option selected>Azərbaycan</option>
-                                    <option>Türkiyə</option>
-                                    <option>İngilis</option>
-                                </select><i class="bi bi-chevron-down" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-                    <label for="profile-signature">İmza</label>
-                    <div class="profile-editor">
-                        <div class="profile-editor-toolbar" role="toolbar" aria-label="İmza formatı">
-                            <button type="button" data-editor-command="bold"><strong>B</strong></button>
-                            <button type="button" data-editor-command="italic"><em>I</em></button>
-                            <button type="button" data-editor-command="underline"><u>U</u></button>
-                            <button type="button" data-editor-command="createLink">Link</button>
-                            <button type="button" data-editor-command="code">&lt;/&gt;</button>
-                        </div>
-                        <div id="profile-signature" class="profile-editor-body" contenteditable="true" role="textbox"
-                            aria-label="İmza"></div>
-                    </div>
-                    <fieldset class="profile-languages">
-                        <legend>İşgüzar</legend>
-                        <label><input type="checkbox"> Azərbaycan</label>
-                        <label><input type="checkbox"> English</label>
-                        <label><input type="checkbox"> Русский</label>
-                    </fieldset>
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p>
-                    <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
-                    <button class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-
-            <section class="profile-panel profile-placeholder" data-profile-panel="other" role="tabpanel" hidden>
-                <h2>Bu bölmə hazırlanır</h2>
-            </section>
-
-            <section class="profile-panel profile-role-panel" data-profile-panel="role" role="tabpanel" hidden>
-                <form class="profile-form" data-role-form>
-                    <fieldset class="profile-role-options">
-                        <legend>Rol</legend>
-                        <label><input type="checkbox" checked> Oxucu</label>
-                        <label><input type="checkbox"> Müəllif</label>
-                        <label><input type="checkbox"> Rəyçi</label>
-                    </fieldset>
-                    <button class="profile-journal-link" type="button" data-role-modal-open><span>+</span><strong>Digər
-                            jurnallarda qeydiyyatdan keçin.</strong></button>
-                    <label for="profile-specialty">İxtisas</label>
-                    <input id="profile-specialty" type="text">
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p>
-                    <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
-                    <button class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-            <section class="profile-panel profile-social-panel" data-profile-panel="social" role="tabpanel" hidden>
-                <form class="profile-form">
-                    <label for="profile-photo">Profil şəkli</label>
-                    <div class="profile-upload"><span>Yükləməyə başlamaq üçün bura sürüşdürüb buraxın</span><label
-                            class="profile-upload-button" for="profile-photo">Faylı yükləyin</label><input
-                            id="profile-photo" type="file" accept="image/*"></div>
-                    <label for="profile-bio">Tərcümeyi-hal</label>
-                    <div class="profile-editor">
-                        <div class="profile-editor-toolbar"><button type="button">B</button><button
-                                type="button"><em>I</em></button><button type="button"><u>U</u></button><button
-                                type="button">Link</button><button type="button">&lt;/&gt;</button></div>
-                        <div id="profile-bio" class="profile-editor-body profile-bio-editor" contenteditable="true"
-                            role="textbox" aria-label="Tərcümeyi-hal"></div>
-                    </div>
-                    <label for="profile-homepage">Ana səhifə URL</label><input id="profile-homepage" type="url">
-                    <label for="profile-orcid">Orcid ID</label><input id="profile-orcid" type="text">
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p>
-                    <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div><button
-                        class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-
-            <section class="profile-panel profile-password-panel" data-profile-panel="password" role="tabpanel" hidden>
-                <form class="profile-form">
-                    <p class="profile-password-intro">İstifadəçi hesabınızın şifrəsini dəyişdirmək üçün hazırkı və yeni
-                        şifrənizi daxil edin.</p>
-                    <label for="current-password">Hazırkı şifrə</label><input id="current-password" type="password"
-                        required>
-                    <label for="new-password">Yeni şifrə</label><input id="new-password" type="password" required>
-                    <label for="repeat-password">Yeni şifrənin təkrarı</label><input id="repeat-password"
-                        type="password" required>
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p><button class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-            <section class="profile-panel profile-notifications-panel" data-profile-panel="notifications"
-                role="tabpanel" hidden>
-                <form class="profile-form">
-                    <p class="profile-notification-intro">Müəyyən edilmiş sistem qovluqlarında istədiyinizi seçin.
-                        Göstərilən bildirişlərdən bağlanmaq istədikləriniz üçün işarəni götürün.</p>
-                    <h2 class="profile-notification-heading">Ümumi elanlar</h2>
-                    <div class="profile-notification-group"><strong>Yeni elan yaradıldı.</strong><label><input
-                                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Yeni nömrə dərc edilmişdir.</strong><label><input
-                                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Nömrə açıq çıxışa verildi.</strong><label><input
-                                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <h2 class="profile-notification-heading">Məqalə vəziyyətləri</h2>
-                    <div class="profile-notification-group"><strong>Yeni bir məqalə, “Başlıq”
-                            göndərildi.</strong><label><input type="checkbox" checked> Bu növ bildirişləri göstərməyə
-                            icazə verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə
-                            email göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Redaktoru təyin edilməsi gərəkən yeni bir məqalə
-                            göndərildi.</strong><label><input type="checkbox"> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Müzakirə əlavə edildi.</strong><label><input
-                                type="checkbox"> Bu növ bildirişləri göstərməyə icazə verin.</label><label><input
-                                type="checkbox"> Bu növ bildirişlər üçün mənə email göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Müzakirə fəaliyyəti</strong><label><input
-                                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <h2 class="profile-notification-heading">Dəyərləndirmə vəziyyətləri</h2>
-                    <div class="profile-notification-group"><strong>Bir rəyçi “Başlıq” haqqında şərh
-                            etdi</strong><label><input type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <h2 class="profile-notification-heading">Redaktorlar</h2>
-                    <div class="profile-notification-group"><strong>Görülməmiş işlər haqqında həftəlik məlumat
-                            e-poçtu</strong><label><input type="checkbox"> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <div class="profile-notification-group"><strong>Statistik hesabat xülasəsi.</strong><label><input
-                                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
-                            verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
-                            göndərməyin</label></div>
-                    <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                        saxlanılır.</p>
-                    <button class="profile-save" type="submit">Yadda saxlayın</button>
-                </form>
-            </section>
-            <section class="profile-panel profile-api-panel" data-profile-panel="api" role="tabpanel" hidden>
-                <div class="profile-api-warning"><strong>Xəbərdarlıq</strong><span>Bir API açarı yaratmadan əvvəl sayt
-                        administratoru konfiqurasiya faylında "api_key_secret" təyin etməlidir.</span></div>
-                <div class="profile-api-field"><label for="profile-api-key">API açarı</label><input id="profile-api-key"
-                        value="Heç kim" readonly><small>Açarın silinməsi onu istifadə edən hər hansı proqrama girişi
-                        ləğv edəcək.</small></div>
-                <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
-                    saxlanılır.</p>
-                <button class="profile-save profile-api-create" type="button" data-api-create>Yeni API açarı
-                    yarat</button>
-            </section>
-        </main>
+  <header class="profile-header">
+    <div class="profile-header-actions">
+      <button type="button" aria-label="Bildirişlər"><i class="bi bi-bell"></i></button>
+      <span></span>
+      <button type="button" aria-label="İstifadəçi menyusu"><i class="bi bi-person"></i></button>
     </div>
-    <div class="profile-role-modal" data-role-modal hidden>
-        <div class="profile-role-modal-backdrop" data-role-modal-close></div>
-        <section class="profile-role-dialog" role="dialog" aria-modal="true" aria-labelledby="role-modal-title">
-            <header>
-                <h2 id="role-modal-title">Digər jurnallarda qeydiyyatdan keçin</h2><button type="button"
-                    aria-label="Bağla" data-role-modal-close><i class="bi bi-x"></i></button>
-            </header>
-            <div class="profile-journal-list">
-                <div class="profile-journal"><strong>Journal of Economics and Management Advances</strong><label><input
-                            type="checkbox"> Reader</label><label><input type="checkbox"> Author</label><label><input
-                            type="checkbox"> Reviewer</label></div>
-                <div class="profile-journal"><strong>Journal of Computer Science and Digital
-                        Technologies</strong><label><input type="checkbox"> Reader</label><label><input type="checkbox">
-                        Author</label><label><input type="checkbox"> Reviewer</label></div>
-                <div class="profile-journal"><strong>AZƏRBAYCAN DÖVLƏT İQTİSAD UNİVERSİTETİNİN ELMİ
-                        XƏBƏRLƏRİ</strong><label><input type="checkbox"> Oxucu</label><label><input type="checkbox">
-                        Müəllif</label><label><input type="checkbox"> Rəyçi</label></div>
-                <div class="profile-journal"><strong>Dizaynın aktual problemləri</strong><label><input type="checkbox">
-                        Oxucu</label><label><input type="checkbox"> Müəllif</label><label><input type="checkbox">
-                        Rəyçi</label></div>
+  </header>
+
+  <div class="profile-layout">
+    <aside class="profile-sidebar" data-profile-sidebar>
+      <div class="profile-sidebar-brand">
+        <a class="profile-brand" href="index.html">UNEC TƏLƏBƏ<br>TƏDQİQATLARI JURNALI</a>
+        <button class="profile-sidebar-toggle" type="button" aria-label="Menyunu bağla" data-profile-menu-toggle>
+          <i class="bi bi-chevron-left"></i>
+        </button>
+      </div>
+      <nav aria-label="Profil menyusu">
+        <a class="active" href="profile.html"><i class="bi bi-person"></i><span>Profil</span></a>
+        <a href="#submissions"><i class="bi bi-file-earmark-text"></i><span>Məqalələr/təqdimatlar</span></a>
+        <a href="#review"><i class="bi bi-clipboard-check"></i><span>İstifadəçi elmi</span></a>
+      </nav>
+      <a class="profile-logout" href="login.html"><i class="bi bi-box-arrow-right"></i>Çıxış et</a>
+    </aside>
+
+    <main class="profile-main">
+      <div class="profile-tabs" role="tablist" aria-label="Profil bölmələri">
+        <button class="active" type="button" role="tab" aria-selected="true"
+          data-profile-tab="personal">Şəxsiyyət</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="contact">Əlaqə</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="role">Rol</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="social">İctimai</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="password">Şifrə</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="notifications">Bildirişlər</button>
+        <button type="button" role="tab" aria-selected="false" data-profile-tab="api">API açarı</button>
+      </div>
+
+      <section class="profile-panel" data-profile-panel="personal" role="tabpanel">
+        <div class="profile-panel-intro"><strong>İstifadəçi adı</strong><span>kamrantalibli</span></div>
+        <hr>
+        <form class="profile-form" data-profile-form>
+          <div class="profile-field-grid">
+            <div><label for="profile-first-name">Ad *</label><input id="profile-first-name" value="Kamran" required>
             </div>
-        </section>
-    </div>
-    <script src="assets/js/main.js"></script>
+            <div><label for="profile-last-name">Soyadı</label><input id="profile-last-name" value="Talibli">
+            </div>
+          </div>
+          <p class="profile-hint">Müəllifin yayınlanmış əsərdə qeyd olunması lazım olduğundan zəhmət olmasa
+            tam adı qeyd edin. Nümunə: Dr. Alan P. Mwandenga</p>
+          <label for="profile-preferred-name">Dərc olunacaq ad</label>
+          <input id="profile-preferred-name">
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p>
+          <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
+          <button class="profile-save" type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+
+      <section class="profile-panel profile-contact-panel" data-profile-panel="contact" role="tabpanel" hidden>
+        <form class="profile-form" data-profile-form>
+          <div class="profile-field-grid">
+            <div><label for="profile-email">Email *</label><input id="profile-email" type="email"
+                value="bytalibli2@gmail.com" required></div>
+            <div><label for="profile-phone">Telefon</label><input id="profile-phone" type="tel"></div>
+            <div><label for="profile-organization">Qurum</label><input id="profile-organization" value="İqtisad"></div>
+            <div><label for="profile-contact-country">Ölkə *</label>
+              <div class="profile-select-wrap"><select id="profile-contact-country" required>
+                  <option selected>Azərbaycan</option>
+                  <option>Türkiyə</option>
+                  <option>İngilis</option>
+                </select><i class="bi bi-chevron-down" aria-hidden="true"></i></div>
+            </div>
+          </div>
+          <label for="profile-signature">İmza</label>
+          <div class="profile-editor">
+            <div class="profile-editor-toolbar" role="toolbar" aria-label="İmza formatı">
+              <button type="button" data-editor-command="bold"><strong>B</strong></button>
+              <button type="button" data-editor-command="italic"><em>I</em></button>
+              <button type="button" data-editor-command="underline"><u>U</u></button>
+              <button type="button" data-editor-command="createLink">Link</button>
+              <button type="button" data-editor-command="code">&lt;/&gt;</button>
+            </div>
+            <div id="profile-signature" class="profile-editor-body" contenteditable="true" role="textbox"
+              aria-label="İmza"></div>
+          </div>
+          <fieldset class="profile-languages">
+            <legend>İşgüzar</legend>
+            <label><input type="checkbox"> Azərbaycan</label>
+            <label><input type="checkbox"> English</label>
+            <label><input type="checkbox"> Русский</label>
+          </fieldset>
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p>
+          <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
+          <button class="profile-save" type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+
+      <section class="profile-panel profile-placeholder" data-profile-panel="other" role="tabpanel" hidden>
+        <h2>Bu bölmə hazırlanır</h2>
+      </section>
+
+      <section class="profile-panel profile-role-panel" data-profile-panel="role" role="tabpanel" hidden>
+        <form class="profile-form" data-role-form>
+          <fieldset class="profile-role-options">
+            <legend>Rol</legend>
+            <label><input type="checkbox" checked> Oxucu</label>
+            <label><input type="checkbox"> Müəllif</label>
+            <label><input type="checkbox"> Rəyçi</label>
+          </fieldset>
+          <button class="profile-journal-link" type="button" data-role-modal-open><span>+</span><strong>Digər
+              jurnallarda qeydiyyatdan keçin.</strong></button>
+          <label for="profile-specialty">İxtisas</label>
+          <input id="profile-specialty" type="text">
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p>
+          <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div>
+          <button class="profile-save" type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+      <section class="profile-panel profile-social-panel" data-profile-panel="social" role="tabpanel" hidden>
+        <form class="profile-form">
+          <label for="profile-photo">Profil şəkli</label>
+          <div class="profile-upload"><span>Yükləməyə başlamaq üçün bura sürüşdürüb buraxın</span><label
+              class="profile-upload-button" for="profile-photo">Faylı yükləyin</label><input id="profile-photo"
+              type="file" accept="image/*"></div>
+          <label for="profile-bio">Tərcümeyi-hal</label>
+          <div class="profile-editor">
+            <div class="profile-editor-toolbar"><button type="button">B</button><button
+                type="button"><em>I</em></button><button type="button"><u>U</u></button><button
+                type="button">Link</button><button type="button">&lt;/&gt;</button></div>
+            <div id="profile-bio" class="profile-editor-body profile-bio-editor" contenteditable="true" role="textbox"
+              aria-label="Tərcümeyi-hal"></div>
+          </div>
+          <label for="profile-homepage">Ana səhifə URL</label><input id="profile-homepage" type="url">
+          <label for="profile-orcid">Orcid ID</label><input id="profile-orcid" type="text">
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p>
+          <div class="profile-required">* Doldurulması məcburi olan sahələri göstərir</div><button class="profile-save"
+            type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+
+      <section class="profile-panel profile-password-panel" data-profile-panel="password" role="tabpanel" hidden>
+        <form class="profile-form">
+          <p class="profile-password-intro">İstifadəçi hesabınızın şifrəsini dəyişdirmək üçün hazırkı və yeni
+            şifrənizi daxil edin.</p>
+          <label for="current-password">Hazırkı şifrə</label><input id="current-password" type="password" required>
+          <label for="new-password">Yeni şifrə</label><input id="new-password" type="password" required>
+          <label for="repeat-password">Yeni şifrənin təkrarı</label><input id="repeat-password" type="password"
+            required>
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p><button class="profile-save" type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+      <section class="profile-panel profile-notifications-panel" data-profile-panel="notifications" role="tabpanel"
+        hidden>
+        <form class="profile-form">
+          <p class="profile-notification-intro">Müəyyən edilmiş sistem qovluqlarında istədiyinizi seçin.
+            Göstərilən bildirişlərdən bağlanmaq istədikləriniz üçün işarəni götürün.</p>
+          <h2 class="profile-notification-heading">Ümumi elanlar</h2>
+          <div class="profile-notification-group"><strong>Yeni elan yaradıldı.</strong><label><input type="checkbox"
+                checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Yeni nömrə dərc edilmişdir.</strong><label><input
+                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Nömrə açıq çıxışa verildi.</strong><label><input
+                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <h2 class="profile-notification-heading">Məqalə vəziyyətləri</h2>
+          <div class="profile-notification-group"><strong>Yeni bir məqalə, “Başlıq”
+              göndərildi.</strong><label><input type="checkbox" checked> Bu növ bildirişləri göstərməyə
+              icazə verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə
+              email göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Redaktoru təyin edilməsi gərəkən yeni bir məqalə
+              göndərildi.</strong><label><input type="checkbox"> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Müzakirə əlavə edildi.</strong><label><input type="checkbox">
+              Bu növ bildirişləri göstərməyə icazə verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün
+              mənə email göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Müzakirə fəaliyyəti</strong><label><input type="checkbox"
+                checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <h2 class="profile-notification-heading">Dəyərləndirmə vəziyyətləri</h2>
+          <div class="profile-notification-group"><strong>Bir rəyçi “Başlıq” haqqında şərh
+              etdi</strong><label><input type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <h2 class="profile-notification-heading">Redaktorlar</h2>
+          <div class="profile-notification-group"><strong>Görülməmiş işlər haqqında həftəlik məlumat
+              e-poçtu</strong><label><input type="checkbox"> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox" checked> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <div class="profile-notification-group"><strong>Statistik hesabat xülasəsi.</strong><label><input
+                type="checkbox" checked> Bu növ bildirişləri göstərməyə icazə
+              verin.</label><label><input type="checkbox"> Bu növ bildirişlər üçün mənə email
+              göndərməyin</label></div>
+          <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+            saxlanılır.</p>
+          <button class="profile-save" type="submit">Yadda saxlayın</button>
+        </form>
+      </section>
+      <section class="profile-panel profile-api-panel" data-profile-panel="api" role="tabpanel" hidden>
+        <div class="profile-api-warning"><strong>Xəbərdarlıq</strong><span>Bir API açarı yaratmadan əvvəl sayt
+            administratoru konfiqurasiya faylında "api_key_secret" təyin etməlidir.</span></div>
+        <div class="profile-api-field"><label for="profile-api-key">API açarı</label><input id="profile-api-key"
+            value="Heç kim" readonly><small>Açarın silinməsi onu istifadə edən hər hansı proqrama girişi
+            ləğv edəcək.</small></div>
+        <p class="profile-privacy">Məlumatlarınız <a href="#privacy">Məxfilik Bəyanatı</a>-a uyğun olaraq
+          saxlanılır.</p>
+        <button class="profile-save profile-api-create" type="button" data-api-create>Yeni API açarı
+          yarat</button>
+      </section>
+    </main>
+  </div>
+  <div class="profile-role-modal" data-role-modal hidden>
+    <div class="profile-role-modal-backdrop" data-role-modal-close></div>
+    <section class="profile-role-dialog" role="dialog" aria-modal="true" aria-labelledby="role-modal-title">
+      <header>
+        <h2 id="role-modal-title">Digər jurnallarda qeydiyyatdan keçin</h2><button type="button" aria-label="Bağla"
+          data-role-modal-close><i class="bi bi-x"></i></button>
+      </header>
+      <div class="profile-journal-list">
+        <div class="profile-journal"><strong>Journal of Economics and Management Advances</strong><label><input
+              type="checkbox"> Reader</label><label><input type="checkbox"> Author</label><label><input type="checkbox">
+            Reviewer</label></div>
+        <div class="profile-journal"><strong>Journal of Computer Science and Digital
+            Technologies</strong><label><input type="checkbox"> Reader</label><label><input type="checkbox">
+            Author</label><label><input type="checkbox"> Reviewer</label></div>
+        <div class="profile-journal"><strong>AZƏRBAYCAN DÖVLƏT İQTİSAD UNİVERSİTETİNİN ELMİ
+            XƏBƏRLƏRİ</strong><label><input type="checkbox"> Oxucu</label><label><input type="checkbox">
+            Müəllif</label><label><input type="checkbox"> Rəyçi</label></div>
+        <div class="profile-journal"><strong>Dizaynın aktual problemləri</strong><label><input type="checkbox">
+            Oxucu</label><label><input type="checkbox"> Müəllif</label><label><input type="checkbox">
+            Rəyçi</label></div>
+      </div>
+    </section>
+  </div>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

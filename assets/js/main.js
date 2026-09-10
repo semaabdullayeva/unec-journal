@@ -87,6 +87,26 @@ window.addEventListener("click", function (e) {
   }
 });
 
+const journalTabs = document.querySelectorAll("[data-journal-tab]");
+
+const journalPanels = document.querySelectorAll("[data-journal-panel]");
+
+journalTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.journalTab;
+
+    // Tab-ların active vəziyyəti
+    journalTabs.forEach((item) => {
+      item.classList.toggle("active", item === tab);
+    });
+
+    // Content dəyişdirilməsi
+    journalPanels.forEach((panel) => {
+      panel.hidden = panel.dataset.journalPanel !== target;
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const languageDropdown = document.getElementById("langDropdown");
   const languageButton = languageDropdown?.querySelector(".dropdown-btn span");
@@ -498,11 +518,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const currentDate = new Date();
   const dateRange = {
-    start: new Date(2026, 0, 6),
-    end: new Date(2026, 0, 12),
-    currentMonth: new Date(2026, 0, 1),
+    currentMonth: new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      1,
+    ),
   };
+  const monthNames = [
+    "Yanvar",
+    "Fevral",
+    "Mart",
+    "Aprel",
+    "May",
+    "İyun",
+    "İyul",
+    "Avqust",
+    "Sentyabr",
+    "Oktyabr",
+    "Noyabr",
+    "Dekabr",
+  ];
 
   const updateDateSelectors = () => {
     if (!monthSelect || !yearSelect) return;
@@ -511,9 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let month = 0; month < 12; month += 1) {
       const option = document.createElement("option");
       option.value = month;
-      option.textContent = new Intl.DateTimeFormat("az-AZ", {
-        month: "long",
-      }).format(new Date(2026, month, 1));
+      option.textContent = monthNames[month];
       monthSelect.appendChild(option);
     }
 
@@ -588,7 +623,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       btn.textContent = day;
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (event) => {
+        event.stopPropagation();
         const selectedDate = new Date(
           date.getFullYear(),
           date.getMonth(),
@@ -637,9 +673,6 @@ document.addEventListener("DOMContentLoaded", () => {
             : "Tarix aralığı";
 
         buildCalendar();
-        if (rangeStart && rangeEnd) {
-          datePopover.classList.remove("open");
-        }
       });
 
       dateGrid.appendChild(btn);
