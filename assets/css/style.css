@@ -197,6 +197,12 @@ img {
   margin: 0;
 }
 
+.title-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .brand-title {
   font-family: 'Afacad Flux', sans-serif;
   font-size: 32px;
@@ -4514,6 +4520,22 @@ body:has(.profile-role-modal:not([hidden])) {
   .journal-description {
     max-width: 100%;
   }
+
+  .article-layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .article-main-column,
+  .article-citation-panel {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .article-citation-panel {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -4567,6 +4589,14 @@ body:has(.profile-role-modal:not([hidden])) {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+  }
+
+  .article-layout {
+    gap: 18px;
+  }
+
+  .citation-box {
+    padding: 16px 14px;
   }
 
   .journal-description p {

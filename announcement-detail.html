@@ -24,113 +24,115 @@
                 </div>
 
                 <div class="header-center">
-                    <h1 class="title">UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI</h1>
-                </div>
+                    <a href="index.html" class="title-link">
+                        <h1 class="title">UNEC TƏLƏBƏ TƏDQİQATLARI JURNALI</h1>
+                    </a>
 
-                <div class="header-right">
-                    <div class="dropdown" id="langDropdown">
-                        <button class="dropdown-btn" onclick="toggleDropdown()">
-                            <span>AZ</span>
+                    <div class="header-right">
+                        <div class="dropdown" id="langDropdown">
+                            <button class="dropdown-btn" onclick="toggleDropdown()">
+                                <span>AZ</span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item active">
+                                    <div class="dropdown-item-left">
+                                        <svg class="flag-icon" viewBox="0 0 36 36">
+                                            <circle fill="#00B5E2" cx="18" cy="18" r="18" />
+                                            <path fill="#E00034" d="M0 12h36v12H0z" />
+                                            <path fill="#009A44" d="M0 24h36v12H0z" />
+                                            <circle fill="#FFF" cx="17" cy="18" r="4" />
+                                            <circle fill="#E00034" cx="18" cy="18" r="3.2" />
+                                            <polygon fill="#FFF"
+                                                points="21,18 21.7,18.5 21.3,17.7 22,17.2 21.1,17.2 20.8,16.4 20.5,17.2 19.6,17.2 20.3,17.7 19.9,18.5" />
+                                        </svg>
+                                        <span>Azerbaijan</span>
+                                    </div>
+
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="dropdown-item-left">
+                                        <svg class="flag-icon" viewBox="0 0 36 36">
+                                            <clipPath id="uk-clip">
+                                                <circle cx="18" cy="18" r="18" />
+                                            </clipPath>
+                                            <g clip-path="url(#uk-clip)">
+                                                <path fill="#00247D" d="M0 0h36v36H0z" />
+                                                <path stroke="#FFF" stroke-width="6"
+                                                    d="M0 0l36 36M36 0L0 36M18 0v36M0 18h36" />
+                                                <path stroke="#CF142B" stroke-width="4" d="M18 0v36M0 18h36" />
+                                                <path stroke="#CF142B" stroke-width="2" d="M0 0l36 36M36 0L0 36" />
+                                            </g>
+                                        </svg>
+                                        <span>English</span>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="dropdown-item-left">
+                                        <svg class="flag-icon" viewBox="0 0 36 36">
+                                            <circle fill="#FFF" cx="18" cy="18" r="18" />
+                                            <path fill="#D52B1E" d="M0 24h36v12H0z" />
+                                            <path fill="#0039A6" d="M0 12h36v12H0z" />
+                                        </svg>
+                                        <span>Russian</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <a href="login.html" class="icon-btn" aria-label="Profil">
+                            <i class="bi bi-person"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav-row d-flex text-center align-items-center">
+                <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Bağla">
+                    <i class="bi bi-x"></i>
+                </button>
+                <div class="container">
+                    <a class="nav-link-custom" href="index.html">Ana səhifə</a>
+
+                    <div class="dropdown" id="aboutDropdown">
+                        <button class="nav-link-custom dropdown-btn about-btn" onclick="toggleAboutDropdown()"
+                            type="button">
+                            <span>Haqqımızda</span>
                             <i class="bi bi-chevron-down"></i>
                         </button>
 
-                        <div class="dropdown-menu">
-                            <div class="dropdown-item active">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <circle fill="#00B5E2" cx="18" cy="18" r="18" />
-                                        <path fill="#E00034" d="M0 12h36v12H0z" />
-                                        <path fill="#009A44" d="M0 24h36v12H0z" />
-                                        <circle fill="#FFF" cx="17" cy="18" r="4" />
-                                        <circle fill="#E00034" cx="18" cy="18" r="3.2" />
-                                        <polygon fill="#FFF"
-                                            points="21,18 21.7,18.5 21.3,17.7 22,17.2 21.1,17.2 20.8,16.4 20.5,17.2 19.6,17.2 20.3,17.7 19.9,18.5" />
-                                    </svg>
-                                    <span>Azerbaijan</span>
-                                </div>
-
+                        <div class="dropdown-menu about-menu">
+                            <div class="about-dropdown-item">
+                                <a href="/journalSubmission.html">
+                                    Jurnal haqqında
+                                </a>
                             </div>
-                            <div class="dropdown-item">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <clipPath id="uk-clip">
-                                            <circle cx="18" cy="18" r="18" />
-                                        </clipPath>
-                                        <g clip-path="url(#uk-clip)">
-                                            <path fill="#00247D" d="M0 0h36v36H0z" />
-                                            <path stroke="#FFF" stroke-width="6"
-                                                d="M0 0l36 36M36 0L0 36M18 0v36M0 18h36" />
-                                            <path stroke="#CF142B" stroke-width="4" d="M18 0v36M0 18h36" />
-                                            <path stroke="#CF142B" stroke-width="2" d="M0 0l36 36M36 0L0 36" />
-                                        </g>
-                                    </svg>
-                                    <span>English</span>
-                                </div>
+                            <div class="about-dropdown-item">
+                                <a href="/articleSubmission.html">
+                                    Məqalə Təqdimatı
+                                </a>
                             </div>
-                            <div class="dropdown-item">
-                                <div class="dropdown-item-left">
-                                    <svg class="flag-icon" viewBox="0 0 36 36">
-                                        <circle fill="#FFF" cx="18" cy="18" r="18" />
-                                        <path fill="#D52B1E" d="M0 24h36v12H0z" />
-                                        <path fill="#0039A6" d="M0 12h36v12H0z" />
-                                    </svg>
-                                    <span>Russian</span>
-                                </div>
+                            <div class="about-dropdown-item">
+                                <a href="/editorialBoard.html">
+                                    Redaksiya heyəti
+                                </a>
+                            </div>
+                            <div class="about-dropdown-item">
+                                <a href="/information.html">
+                                    Məlumat
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="divider"></div>
-                    <a href="login.html" class="icon-btn" aria-label="Profil">
-                        <i class="bi bi-person"></i>
-                    </a>
+
+                    <a class="nav-link-custom" href="/archive.html">Arxiv</a>
+                    <a class="nav-link-custom" href="/announcement.html">Elanlar</a>
+                    <a class="nav-link-custom" href="/contact.html">Əlaqə</a>
+                    <a class="nav-link-custom" href="#">Açıq Jurnal sistemləri <i
+                            class="bi bi-box-arrow-up-right"></i></a>
                 </div>
-            </div>
-        </div>
-
-        <nav class="nav-row d-flex text-center align-items-center">
-            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Bağla">
-                <i class="bi bi-x"></i>
-            </button>
-            <div class="container">
-                <a class="nav-link-custom" href="/index.html">Ana səhifə</a>
-
-                <div class="dropdown" id="aboutDropdown">
-                    <button class="nav-link-custom dropdown-btn about-btn" onclick="toggleAboutDropdown()"
-                        type="button">
-                        <span>Haqqımızda</span>
-                        <i class="bi bi-chevron-down"></i>
-                    </button>
-
-                    <div class="dropdown-menu about-menu">
-                        <div class="about-dropdown-item">
-                            <a href="/journalSubmission.html">
-                                Jurnal haqqında
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="/articleSubmission.html">
-                                Məqalə Təqdimatı
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="/editorialBoard.html">
-                                Redaksiya heyəti
-                            </a>
-                        </div>
-                        <div class="about-dropdown-item">
-                            <a href="/information.html">
-                                Məlumat
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <a class="nav-link-custom" href="/archive.html">Arxiv</a>
-                <a class="nav-link-custom" href="/announcement.html">Elanlar</a>
-                <a class="nav-link-custom" href="/contact.html">Əlaqə</a>
-                <a class="nav-link-custom" href="#">Açıq Jurnal sistemləri <i class="bi bi-box-arrow-up-right"></i></a>
-            </div>
-        </nav>
+            </nav>
     </header>
 
     <!-- ================= BREADCRUMB ================= -->
@@ -247,7 +249,7 @@
                 <div class="col-6 col-lg-2">
                     <div class="footer-heading">Sürətli keçid</div><a class="footer-link" href="index.html">Ana
                         səhifə</a><a class="footer-link" href="archive.html">Arxiv</a><a class="footer-link"
-                        href="announcements.html">Elanlar</a><a class="footer-link" href="contact.html">Əlaqə</a><a
+                        href="announcement.html">Elanlar</a><a class="footer-link" href="contact.html">Əlaqə</a><a
                         class="footer-link" href="systems.html">Açıq Jurnal
                         sistemləri</a>
                 </div>
