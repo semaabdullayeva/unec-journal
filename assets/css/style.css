@@ -975,6 +975,7 @@ img {
 
 .journal-content {
   padding-top: 41px;
+  min-height: 220px;
 }
 
 .journal-panel {
@@ -982,6 +983,9 @@ img {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.72;
+  min-height: 220px;
+  height: 220px;
+  overflow: hidden;
 }
 
 .journal-panel p {
@@ -1028,43 +1032,58 @@ img {
 
   .journal-content {
     padding-top: 30px;
+    min-height: 200px;
   }
 
   .journal-panel {
     font-size: 16px;
     line-height: 1.65;
+    min-height: 200px;
+    height: 200px;
   }
 }
 
 @media (max-width: 576px) {
 
   .journal-notification {
-    width: calc(100% - 16px);
-    margin: 8px auto;
-    padding: 28px 20px 32px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 22px 18px 26px;
+    border-radius: 14px;
+    min-height: auto;
   }
 
   .journal-tabs {
     display: flex;
     overflow-x: auto;
+    gap: 0;
+    width: 100%;
   }
 
   .journal-tab {
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    margin-right: 24px;
-    padding: 10px 0 16px;
+    margin-right: 20px;
+    padding: 10px 0 14px;
   }
 
   .journal-content {
-    padding-top: 25px;
+    padding-top: 20px;
+    min-height: 180px;
   }
 
   .journal-panel {
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.6;
+    min-height: 180px;
+    height: 300px;
+  }
+
+  .journal-panel p {
+    font-size: 13px;
+    line-height: 1.7;
   }
 }
 
@@ -1078,9 +1097,22 @@ img {
 
 @media (max-width: 767.98px) {
   .info-banner-inner {
-    padding: 20px;
+    padding: 0;
     min-height: 430px;
     align-items: flex-end;
+    background-position: center center;
+    border-radius: 12px;
+  }
+
+  .journal-info {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .journal-info>.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 8px 8px;
   }
 }
 
